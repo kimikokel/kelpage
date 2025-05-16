@@ -844,7 +844,7 @@ export default function Portfolio() {
                             "Adobe XD",
                             "Adobe Ai",
                           ],
-                          image: "/bookstore.jpeg?height=200&width=400",
+                          image: "/wcf.png?height=200&width=400",
                           stars: 26,
                           forks: 12,
                           links: "https://kelxd.lol/bookstore",
