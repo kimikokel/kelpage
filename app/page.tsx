@@ -185,7 +185,7 @@ export default function Portfolio() {
                   Try the search bar
                 </Link>
                 <Link href="#" className="text-[#c9d1d9] hover:text-white">
-                  And you'll found out...
+                  And you'll find out...
                 </Link>
                 <Link href="#" className="text-[#c9d1d9] hover:text-white">
                   That's fake ;D
