@@ -157,7 +157,7 @@ export default function Portfolio() {
             </Tabs>
             <Avatar className="h-8 w-8 border-2 border-[#30363d]">
               <AvatarImage src="/pp2.jpg?height=80&width=80" alt="@username" />
-              <AvatarFallback>UN</AvatarFallback>
+              <AvatarFallback>kel</AvatarFallback>
             </Avatar>
           </div>
 
@@ -182,16 +182,13 @@ export default function Portfolio() {
             >
               <div className="flex flex-col space-y-4 p-4">
                 <Link href="#" className="text-[#c9d1d9] hover:text-white">
-                  Hi
+                  Try the search bar
                 </Link>
                 <Link href="#" className="text-[#c9d1d9] hover:text-white">
-                  I
+                  And you'll found out...
                 </Link>
                 <Link href="#" className="text-[#c9d1d9] hover:text-white">
-                  Am
-                </Link>
-                <Link href="#" className="text-[#c9d1d9] hover:text-white">
-                  Kel
+                  That's fake ;D
                 </Link>
                 <div className="relative">
                   <input
