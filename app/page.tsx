@@ -851,6 +851,25 @@ export default function Portfolio() {
                           showButton: true,
                           buttonText: "View Design",
                         },
+                        {
+                          title: "Pastel Themed Kanban Board",
+                          description:
+                            "A cute & colourful Kanban board to organise tasks, set deadlines, and stop procrastination in its tracks! Create, drag, and modify tasks with ease! (Support login and cloud save in the future!)",
+                          tech: [
+                            "Vue.js",
+                            "Tailwind CSS",
+                            "Node.js",
+                            "JavaScript",
+                            "Typescript",
+                            "Nuxt.js",
+                          ],
+                          image: "/kanban.jpg?height=200&width=400",
+                          stars:99,
+                          forks: 88,
+                          links: "https://kelxd.lol/kelboard/",
+                          showButton: true,
+                          buttonText: "Try it out",
+                        },
                       ].map((project, index) => (
                         <motion.div
                           key={index}
