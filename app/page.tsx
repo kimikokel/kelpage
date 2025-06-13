@@ -542,8 +542,11 @@ export default function Portfolio() {
                                 "JavaScript",
                                 "TypeScript",
                                 "React",
+                                "Vue",
+                                "React Native",
                                 "Next.js",
                                 "Vite.js",
+                                "Nuxt.js",
                                 "JQuery",
                                 "Tailwind CSS",
                                 "Bootstrap",
@@ -869,6 +872,21 @@ export default function Portfolio() {
                           links: "https://kelxd.lol/kelboard/",
                           showButton: true,
                           buttonText: "Try it out",
+                        },
+                        {
+                          title: "Weather Wizard IOS APP",
+                          description:
+                            "Weather Wizard 🌦️ - Your Instant Forecast Sidekick!\nType any city or country and instantly get:\n☀️ Current, high & low temps | 💧 Humidity | 🌬️ Wind speed\n☔ Most importantly: Will it rain today? ⏰ When?!",
+                          tech: [
+                            "React Native",
+                            "Javascript",
+                            "Node.js",
+                            "Expo",
+                          ],
+                          image: "/weatherwizard.png?height=200&width=400",
+                          stars: 77,
+                          forks: 88,
+                          showButton: false,
                         },
                       ].map((project, index) => (
                         <motion.div
