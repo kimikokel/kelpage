@@ -148,7 +148,7 @@ const projects = [
     description:
       "Confused about how many days you stayed in Macau in 2025? Wondering if you qualify for the 2026 benefits? This handy calendar helps you easily log and count your stay—so you’ll know exactly whether you’ve earned that 10k MOP next year! 💰💰💰💰",
     tech: ["HTML", "CSS", "JavaScript"],
-    image: "/macaucalendar.jpg?height=200&width=400",
+    image: "/macaucalendarcal.png?height=200&width=400",
     stars: 183,
     forks: 2025,
     links: "https://kelxd.lol/macaucalendar/",
