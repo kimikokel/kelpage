@@ -112,10 +112,7 @@ export default function Portfolio() {
                 transition={{ duration: 0.3 }}
               >
                 <TabsContent value="overview" className="mt-6">
-                  <OverviewTab
-                    activeTab={activeTab}
-                    setActiveTab={setActiveTab}
-                  />
+                  <OverviewTab activeTab={activeTab} setActiveTab={setActiveTab} />
                 </TabsContent>
 
                 <TabsContent value="skills" className="mt-6">
@@ -131,10 +128,7 @@ export default function Portfolio() {
                 </TabsContent>
 
                 <TabsContent value="contact" className="mt-6">
-                  <ContactTab
-                    copyEmail={copyEmail}
-                    triggerShake={triggerShake}
-                  />
+                  <ContactTab copyEmail={copyEmail} triggerShake={triggerShake} />
                 </TabsContent>
               </motion.div>
             </Tabs>
