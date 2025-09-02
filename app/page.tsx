@@ -217,7 +217,7 @@ export default function Portfolio() {
                   src="/pp1.jpg?height=256&width=256"
                   alt="@username"
                 />
-                <AvatarFallback className="text-4xl">UN</AvatarFallback>
+                <AvatarFallback className="text-4xl"></AvatarFallback>
               </Avatar>
               <h1 className="mt-4 text-2xl font-bold">Kel / Kelly</h1>
               <p className="text-[#8b949e]">@kelxd_</p>
@@ -1009,7 +1009,7 @@ export default function Portfolio() {
                             {
                               title: "🗾 Learning Japanese",
                               description:
-                                "Currently grinding through Duolingo for 200+ days (頑張ります!).",
+                                "Currently grinding through Duolingo for 320+ days (頑張ります!).",
                               icon: Languages,
                             },
                           ].map((fact, index) => (
