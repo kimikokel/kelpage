@@ -158,6 +158,55 @@ const projects = [
 ];
 
 export default function ProjectsTab() {
+  // Define color schemes for different project types
+  const getProjectStyle = (index: number) => {
+    const styles = [
+      {
+        bg: "bg-gradient-to-br from-emerald-500/5 to-green-500/5",
+        border: "border-emerald-500/20",
+        headerBg: "bg-gradient-to-r from-emerald-500/10 to-green-500/10",
+        titleColor: "text-emerald-300",
+        hover: "hover:border-emerald-400/40",
+      },
+      {
+        bg: "bg-gradient-to-br from-blue-500/5 to-indigo-500/5",
+        border: "border-blue-500/20",
+        headerBg: "bg-gradient-to-r from-blue-500/10 to-indigo-500/10",
+        titleColor: "text-blue-300",
+        hover: "hover:border-blue-400/40",
+      },
+      {
+        bg: "bg-gradient-to-br from-purple-500/5 to-violet-500/5",
+        border: "border-purple-500/20",
+        headerBg: "bg-gradient-to-r from-purple-500/10 to-violet-500/10",
+        titleColor: "text-purple-300",
+        hover: "hover:border-purple-400/40",
+      },
+      {
+        bg: "bg-gradient-to-br from-orange-500/5 to-red-500/5",
+        border: "border-orange-500/20",
+        headerBg: "bg-gradient-to-r from-orange-500/10 to-red-500/10",
+        titleColor: "text-orange-300",
+        hover: "hover:border-orange-400/40",
+      },
+      {
+        bg: "bg-gradient-to-br from-cyan-500/5 to-teal-500/5",
+        border: "border-cyan-500/20",
+        headerBg: "bg-gradient-to-r from-cyan-500/10 to-teal-500/10",
+        titleColor: "text-cyan-300",
+        hover: "hover:border-cyan-400/40",
+      },
+      {
+        bg: "bg-gradient-to-br from-pink-500/5 to-rose-500/5",
+        border: "border-pink-500/20",
+        headerBg: "bg-gradient-to-r from-pink-500/10 to-rose-500/10",
+        titleColor: "text-pink-300",
+        hover: "hover:border-pink-400/40",
+      },
+    ];
+    return styles[index % styles.length];
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -165,69 +214,98 @@ export default function ProjectsTab() {
       transition={{ duration: 0.5 }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.03 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 10,
-            }}
-          >
-            <Card className="bg-[#161b22] border-[#30363d] overflow-hidden h-full">
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl text-white">
-                  {project.title}
-                </CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="bg-[#0d1117]"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="flex justify-between border-t border-[#30363d] pt-4">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-1">
-                    <Star className="h-4 w-4" />
-                    <span>{project.stars}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <GitFork className="h-4 w-4" />
-                    <span>{project.forks}</span>
+        {projects.map((project, index) => {
+          const style = getProjectStyle(index);
+          return (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.03, y: -4 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              }}
+            >
+              <Card
+                className={`${style.bg} ${style.border} ${style.hover} overflow-hidden h-full transition-all duration-300`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <div
+                    className={`absolute inset-0 ${style.headerBg} opacity-20`}
+                  ></div>
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                  <div className="absolute top-2 right-2 flex gap-2">
+                    <div className="bg-black/60 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                      <Star className="h-3 w-3 text-yellow-400" />
+                      <span className="text-xs text-white">
+                        {project.stars}
+                      </span>
+                    </div>
+                    <div className="bg-black/60 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                      <GitFork className="h-3 w-3 text-gray-400" />
+                      <span className="text-xs text-white">
+                        {project.forks}
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-[#30363d] hover:bg-[#30363d]"
-                  onClick={() => window.open(project.links, "_blank")?.focus}
-                  style={{
-                    display: project.showButton ? undefined : "none",
-                  }}
+                <CardHeader
+                  className={`${style.headerBg} border-b ${style.border}`}
                 >
-                  {project.buttonText}
-                </Button>
-              </CardFooter>
-            </Card>
-          </motion.div>
-        ))}
+                  <CardTitle className={`text-xl ${style.titleColor}`}>
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="text-[#c9d1d9]/80">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="p-4">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="bg-black/20 text-[#c9d1d9] border-white/10"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className={`border-t ${style.border} p-4`}>
+                  <div className="flex justify-between items-center w-full">
+                    <div className="flex items-center gap-4 text-sm text-[#8b949e]">
+                      <div className="flex items-center gap-1">
+                        <Star className="h-4 w-4" />
+                        <span>{project.stars}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <GitFork className="h-4 w-4" />
+                        <span>{project.forks}</span>
+                      </div>
+                    </div>
+                    {project.showButton && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className={`${style.border} hover:bg-white/10 ${style.titleColor} transition-all duration-200`}
+                        onClick={() =>
+                          window.open(project.links, "_blank")?.focus
+                        }
+                      >
+                        {project.buttonText}
+                      </Button>
+                    )}
+                  </div>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          );
+        })}
       </div>
     </motion.div>
   );

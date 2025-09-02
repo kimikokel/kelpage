@@ -26,6 +26,7 @@ interface HeaderProps {
 
 export default function Header({ activeTab, setActiveTab }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#30363d] bg-[#161b22]">
@@ -42,6 +43,9 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
               <input
                 type="text"
                 placeholder="Search..."
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                suppressHydrationWarning
                 className="h-8 w-64 rounded-md bg-[#0d1117] px-3 text-sm text-[#c9d1d9] border border-[#30363d] focus:outline-none focus:ring-2 focus:ring-[#58a6ff] focus:border-transparent"
               />
             </div>

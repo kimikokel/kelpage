@@ -23,12 +23,14 @@ export default function ProfileSidebar({ triggerShake }: ProfileSidebarProps) {
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("kellyleong2002@gmail.com");
-    toast({
-      title: "Email copied to clipboard",
-      description: "kellyleong@gmail.com",
-    });
-    triggerShake();
+    if (typeof window !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText("kellyleong2002@gmail.com");
+      toast({
+        title: "Email copied to clipboard",
+        description: "kellyleong@gmail.com",
+      });
+      triggerShake();
+    }
   };
 
   return (
