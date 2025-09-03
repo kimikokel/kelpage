@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Star, Code, Briefcase, Coffee, Mail } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "../hooks/useTranslation";
 
 interface OverviewTabProps {
   activeTab: string;
@@ -66,6 +67,28 @@ export default function OverviewTab({
   activeTab,
   setActiveTab,
 }: OverviewTabProps) {
+  const { t, isInitialized } = useTranslation();
+
+  // Don't render until translations are initialized
+  if (!isInitialized) {
+    return <div>{t("common.loading")}</div>;
+  }
+
+  // Helper function to format text with line breaks and HTML
+  const formatText = (text: string) => {
+    return text.split("|").map((line, index) => (
+      <span key={index}>
+        <span dangerouslySetInnerHTML={{ __html: line }} />
+        {index < text.split("|").length - 1 && <br />}
+      </span>
+    ));
+  };
+
+  // Helper function to render HTML content
+  const renderHTML = (text: string) => {
+    return <span dangerouslySetInnerHTML={{ __html: text }} />;
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -85,66 +108,18 @@ export default function OverviewTab({
                 <div className="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-400 to-violet-400 flex items-center justify-center">
                   <span className="text-white text-sm font-bold">K</span>
                 </div>
-                About Me
+                {t("overview.title")}
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6">
               <p className="text-[#c9d1d9] leading-relaxed">
-                Hey there! 👋 I'm Kel / Kelly, a{" "}
-                <span className="text-indigo-300 font-semibold">
-                  full-stack developer
-                </span>{" "}
-                specialising in end-to-end digital solutions. 💻✨
+                {renderHTML(t("overview.greeting"))}
               </p>
               <p className="mt-4 text-[#c9d1d9] leading-relaxed">
-                🌐 <span className="text-blue-300 font-medium">Websites</span> &
-                web applications, <br />
-                📱{" "}
-                <span className="text-purple-300 font-medium">
-                  Mobile apps
-                </span>{" "}
-                for iOS & Android,
-                <br /> �{" "}
-                <span className="text-green-300 font-medium">
-                  Business systems
-                </span>{" "}
-                & enterprise solutions,
-                <br /> 🛒{" "}
-                <span className="text-orange-300 font-medium">
-                  E-commerce
-                </span>{" "}
-                & webstore platforms, <br />
-                🎮 <span className="text-pink-300 font-medium">Games</span> &
-                interactive experiences, <br />
-                🎵{" "}
-                <span className="text-violet-300 font-medium">
-                  Music production
-                </span>{" "}
-                & audio mixing services, <br />
-                🎬{" "}
-                <span className="text-teal-300 font-medium">
-                  Video editing
-                </span>{" "}
-                & animation video commissions—
+                {formatText(t("overview.services"))}
               </p>
               <p className="mt-4 text-[#c9d1d9] leading-relaxed">
-                I offer{" "}
-                <span className="text-yellow-300 font-medium">
-                  custom development
-                </span>
-                ,
-                <span className="text-cyan-300 font-medium">
-                  {" "}
-                  commission work
-                </span>
-                , and
-                <span className="text-rose-300 font-medium">
-                  {" "}
-                  freelance projects
-                </span>{" "}
-                to bring your ideas to life. ✨<br />
-                From concept to deployment, I handle the full development
-                lifecycle for businesses of all sizes. 🚀
+                {renderHTML(t("overview.offering"))}
               </p>
             </CardContent>
           </Card>
@@ -165,33 +140,33 @@ export default function OverviewTab({
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-gray-400 to-gray-500 flex items-center justify-center">
                     <Code className="h-4 w-4 text-white" />
                   </div>
-                  Navigations
+                  {t("overview.nav.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="grid gap-4 p-6">
                 {[
                   {
-                    name: "Skills",
+                    name: t("navigation.skills"),
                     icon: Code,
-                    description: "Check out my technical skills and expertise",
+                    description: t("overview.nav.skillsDesc"),
                     tab: "skills",
                   },
                   {
-                    name: "Projects",
+                    name: t("navigation.projects"),
                     icon: Briefcase,
-                    description: "Browse through my portfolio of projects",
+                    description: t("overview.nav.projectsDesc"),
                     tab: "projects",
                   },
                   {
-                    name: "Fun Facts",
+                    name: t("navigation.funFacts"),
                     icon: Coffee,
-                    description: "Discover interesting facts about me",
+                    description: t("overview.nav.funFactsDesc"),
                     tab: "funfacts",
                   },
                   {
-                    name: "Contact",
+                    name: t("navigation.contact"),
                     icon: Mail,
-                    description: "Get in touch with me",
+                    description: t("overview.nav.contactDesc"),
                     tab: "contact",
                   },
                 ].map((link, index) => {
@@ -251,16 +226,16 @@ export default function OverviewTab({
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 flex items-center justify-center">
                     <Star className="h-4 w-4 text-white" />
                   </div>
-                  Project Stats
+                  {t("overview.stats.title")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="space-y-4">
                   {[
-                    { label: "Coding Projects", count: "40+" },
-                    { label: "Games Developed", count: "5+" },
-                    { label: "Audio Mixing", count: "30+" },
-                    { label: "Video Production", count: "30+" },
+                    { label: t("overview.stats.coding"), count: "40+" },
+                    { label: t("overview.stats.games"), count: "5+" },
+                    { label: t("overview.stats.audio"), count: "30+" },
+                    { label: t("overview.stats.video"), count: "30+" },
                   ].map((stat, index) => {
                     const style = statsStyles[index];
                     return (

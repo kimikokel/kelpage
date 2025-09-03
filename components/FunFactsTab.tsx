@@ -18,6 +18,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTranslation } from "../hooks/useTranslation";
 
 // Define color schemes for different fun facts
 const factStyles = {
@@ -73,44 +74,38 @@ const factStyles = {
 
 const funFacts = [
   {
-    title: "🎮 Gamer at Heart",
-    description:
-      "I enjoy exploring different game genres, both as a player and a developer.",
+    titleKey: "funFacts.fact1-title",
+    descriptionKey: "funFacts.fact1",
     icon: Gamepad,
     style: factStyles.gaming,
   },
   {
-    title: "🎵 One-Man Band ",
-    description:
-      "Vocalist, guitarist, bassist, pianist, drummer—call me whatever you want. I am a full band myself.",
+    titleKey: "funFacts.fact2-title",
+    descriptionKey: "funFacts.fact2",
     icon: Music2,
     style: factStyles.music,
   },
   {
-    title: "🌏 International Experience",
-    description:
-      "Born in Macau, studied in Australia, exchanged in Singapore, working in Hong Kong and went to 15+ countries. ",
+    titleKey: "funFacts.fact3-title",
+    descriptionKey: "funFacts.fact3",
     icon: Earth,
     style: factStyles.travel,
   },
   {
-    title: "👩🏻‍🔧 E/ISTP Personality",
-    description:
-      "A mix of logic, curiosity, and a love for hands-on problem-solving.",
+    titleKey: "funFacts.fact4-title",
+    descriptionKey: "funFacts.fact4",
     icon: PersonStanding,
     style: factStyles.personality,
   },
   {
-    title: "🛠 Tinkerer at Heart",
-    description:
-      "Whether it's building apps, tweaking game mechanics, or learning new tech, I love figuring out how things work.",
+    titleKey: "funFacts.fac5-title",
+    descriptionKey: "funFacts.fact5",
     icon: Hammer,
     style: factStyles.tinkering,
   },
   {
-    title: "🗾 Learning Japanese",
-    description:
-      "Currently grinding through Duolingo for 340+ days (頑張ります!).",
+    titleKey: "funFacts.fact6-title",
+    descriptionKey: "funFacts.fact6",
     icon: Languages,
     style: factStyles.language,
   },
@@ -141,15 +136,15 @@ function PixelBoard() {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-wrap gap-3 p-4 bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20 rounded-lg">
-        <div className="flex flex-wrap gap-2 flex-1">
+    <div className="space-y-4 md:space-y-6">
+      <div className="flex flex-col sm:flex-row gap-3 p-3 md:p-4 bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20 rounded-lg">
+        <div className="flex flex-wrap gap-1 md:gap-2 flex-1 justify-center sm:justify-start">
           {colors.map((color) => (
             <motion.div
               key={color}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 rounded-full cursor-pointer border-2 shadow-lg"
+              className="w-6 h-6 md:w-10 md:h-10 rounded-full cursor-pointer border-2 shadow-lg"
               style={{
                 backgroundColor: color,
                 borderColor:
@@ -164,21 +159,21 @@ function PixelBoard() {
         <Button
           variant="outline"
           size="sm"
-          className="border-violet-500/30 hover:bg-violet-500/20 text-violet-300 hover:text-violet-200"
+          className="border-violet-500/30 hover:bg-violet-500/20 text-violet-300 hover:text-violet-200 text-xs md:text-sm"
           onClick={clearBoard}
         >
           Clear Board
         </Button>
       </div>
 
-      <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 p-6 rounded-lg border border-gray-700/30">
-        <div className="grid grid-cols-10 gap-1 max-w-md mx-auto p-4 bg-black/20 rounded-lg border border-gray-600/20">
+      <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 p-2 md:p-6 rounded-lg border border-gray-700/30">
+        <div className="grid grid-cols-10 gap-0.5 md:gap-1 max-w-xs md:max-w-md mx-auto p-2 md:p-4 bg-black/20 rounded-lg border border-gray-600/20">
           {pixels.map((pixel, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="w-8 h-8 rounded-sm cursor-pointer border border-gray-600/40 transition-all duration-150"
+              className="w-5 h-5 md:w-8 md:h-8 rounded-sm cursor-pointer border border-gray-600/40 transition-all duration-150"
               style={{
                 backgroundColor: pixel || "#0d1117",
                 boxShadow: pixel ? `0 0 4px ${pixel}60` : "none",
@@ -189,7 +184,7 @@ function PixelBoard() {
         </div>
       </div>
 
-      <p className="text-center text-sm text-violet-200/60 italic">
+      <p className="text-center text-xs md:text-sm text-violet-200/60 italic px-2">
         🎨 Select a color above and click on the grid to create your
         masterpiece!
       </p>
@@ -198,6 +193,13 @@ function PixelBoard() {
 }
 
 export default function FunFactsTab() {
+  const { t, isInitialized } = useTranslation();
+
+  // Don't render until translations are initialized
+  if (!isInitialized) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -211,17 +213,20 @@ export default function FunFactsTab() {
               <div className="w-5 h-5 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full"></div>
             </div>
             <CardTitle className="text-xl text-indigo-300">
-              Fun Facts About Me
+              {t("funFacts.title")}
             </CardTitle>
           </div>
         </CardHeader>
-        <CardContent>
+        <CardContent style={{ marginTop: "1rem", marginBottom: "1rem" }}>
           <div className="grid gap-4">
             {funFacts.map((fact, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.03, x: 8 }}
                 transition={{ duration: 0.2 }}
+                style={{
+                  marginTop: "1.3rem",
+                }}
                 className={`flex gap-4 p-6 border rounded-lg ${fact.style.bg} ${fact.style.border} ${fact.style.hover} transition-all duration-200 items-center`}
               >
                 <div
@@ -233,10 +238,10 @@ export default function FunFactsTab() {
                   <h3
                     className={`font-semibold text-lg ${fact.style.titleColor} mb-2`}
                   >
-                    {fact.title}
+                    {t(fact.titleKey)}
                   </h3>
                   <p className="text-[#c9d1d9] leading-relaxed">
-                    {fact.description}
+                    {t(fact.descriptionKey)}
                   </p>
                 </div>
               </motion.div>
@@ -253,10 +258,10 @@ export default function FunFactsTab() {
             </div>
             <div>
               <CardTitle className="text-xl text-violet-300">
-                Interactive Pixel Board
+                {t("board.title")}
               </CardTitle>
               <CardDescription className="text-violet-200/70">
-                Click on the pixels to create your own art!
+                {t("board.description")}
               </CardDescription>
             </div>
           </div>

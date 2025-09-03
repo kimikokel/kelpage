@@ -1,16 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Code,
+  Palette,
   Database,
   Wrench,
-  Palette,
   Gamepad2,
   Camera,
   Music,
 } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { useTranslation } from "../hooks/useTranslation";
 
 // Define color schemes for different categories
 const categoryStyles = {
@@ -89,6 +96,13 @@ const categoryStyles = {
 };
 
 export default function SkillsTab() {
+  const { t, isInitialized } = useTranslation();
+
+  // Don't render until translations are initialized
+  if (!isInitialized) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -97,7 +111,9 @@ export default function SkillsTab() {
     >
       <Card className="bg-[#161b22] border-[#30363d]">
         <CardHeader>
-          <CardTitle className="text-xl text-white">Technical Skills</CardTitle>
+          <CardTitle className="text-xl text-white">
+            {t("skills.titleTech")}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid gap-6">
@@ -113,7 +129,7 @@ export default function SkillsTab() {
                 <h3
                   className={`text-lg font-medium ${categoryStyles.programming.text}`}
                 >
-                  Programming Languages
+                  {t("skills.language")}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -150,7 +166,7 @@ export default function SkillsTab() {
                 <h3
                   className={`text-lg font-medium ${categoryStyles.frontend.text}`}
                 >
-                  Frontend Technologies
+                  {t("skills.frontend")}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -190,7 +206,7 @@ export default function SkillsTab() {
                 <h3
                   className={`text-lg font-medium ${categoryStyles.backend.text}`}
                 >
-                  Backend & Database
+                  {t("skills.backend")}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -220,7 +236,7 @@ export default function SkillsTab() {
                 <h3
                   className={`text-lg font-medium ${categoryStyles.devtools.text}`}
                 >
-                  Development Tools & DevOps
+                  {t("skills.tools")}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -257,7 +273,7 @@ export default function SkillsTab() {
                 <h3
                   className={`text-lg font-medium ${categoryStyles.design.text}`}
                 >
-                  Design & Hardware
+                  {t("skills.others")}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -282,7 +298,7 @@ export default function SkillsTab() {
 
         <CardHeader>
           <CardTitle className="text-xl text-white">
-            Multimedia Related Skills
+            {t("skills.titleMulti")}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -299,7 +315,7 @@ export default function SkillsTab() {
                 <h3
                   className={`text-lg font-medium ${categoryStyles.game.text}`}
                 >
-                  Game Development & 3D Design
+                  {t("skills.game3D")}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -327,7 +343,7 @@ export default function SkillsTab() {
                 <h3
                   className={`text-lg font-medium ${categoryStyles.media.text}`}
                 >
-                  Photo & Video / Animation Production
+                  {t("skills.video")}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -362,7 +378,7 @@ export default function SkillsTab() {
                 <h3
                   className={`text-lg font-medium ${categoryStyles.audio.text}`}
                 >
-                  Music & Audio Production
+                  {t("skills.audio")}
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">

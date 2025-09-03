@@ -1,0 +1,112 @@
+{
+  "navigation": {
+    "overview": "概覽",
+    "skills": "技能",
+    "projects": "專案",
+    "funFacts": "關於",
+    "contact": "聯絡"
+  },
+  "overview": {
+    "title": "關於我",
+    "greeting": "嗨！👋 我是 Kel / Kelly，一位專精於端到端數位解決方案的<span class='text-indigo-300'>全端開發者</span>。💻✨",
+    "services": "🌐 <span class='text-blue-300'>網站</span>與網路應用程式,|📱 <span class='text-violet-300'>手機應用程式</span> iOS & Android,|💼 <span class='text-green-400'>商業系統</span>與企業解決方案,|🛒 <span class='text-yellow-400'>電子商務</span>與網店平台,|🎮 <span class='text-pink-300'>遊戲</span>與互動體驗,|🎵 <span class='text-purple-400'>音樂製作</span>與混音服務,|🎬 <span class='text-cyan-400'>影片編輯</span>與動畫委託製作",
+    "offering": "我提供<span class='text-yellow-400'>客製化開發</span>、<span class='text-cyan-400'>委託工作</span>和<span class='text-red-400'>自由接案項目</span>，將您的想法變為現實。✨ 從概念到部署，我為各種規模的企業處理完整的<span class='text-green-400'>開發生命週期</span>。🚀",
+    "nav": {
+        "title": "瀏覽",
+        "skillsDesc": "查看我的技術技能與專業知識",
+        "projectsDesc": "瀏覽我的專案作品集",
+        "funFactsDesc": "了解關於我的興趣",
+        "contactDesc": "與我取得聯繫"
+    },
+    "stats": {
+      "title": "專案統計",
+      "coding": "程式專案",
+      "games": "遊戲開發",
+      "audio": "音頻混音",
+      "video": "影片製作"
+    }
+  },
+  "skills": {
+    "titleTech": "技術技能",
+    "language": "程式語言",
+    "frontend": "前端技術",
+    "backend": "後端與資料庫", 
+    "tools": "開發工具與DevOps",
+    "others": "設計與其他",
+    "titleMulti": "多媒體相關技能",
+    "game3D": "遊戲開發與3D設計",
+    "video": "攝影與影片/動畫製作",
+    "audio": "音樂與音頻製作"
+  },
+  "projects": {
+    "title": "精選專案",
+    "viewProject": "查看專案",
+    "playClawGame": "立即遊玩",
+    "playQubyJump": "立即遊玩",
+    "watchTrailer": "觀看預告片",
+    "viewDesign": "查看設計",
+    "tryItOut": "馬上試用",
+    "calculateNow": "立即計算",
+    "stars": "星標",
+    "forks": "分支",
+    "projectDesc": {
+        "enchanted": "Enchanted 園藝APP", 
+        "enchantedDesc": "植物愛好者的完美應用程式！獲得澆水和收穫提醒、季節性種植指南、土壤酸鹼值提示，以及種植夢想花園所需的一切。",
+        "dcBot": "Discord 機器人",
+        "dcBotDesc": "多功能 Discord 機器人，提供天氣預報、AI 聊天、您最喜愛創作者的直播提醒、角色管理和伺服器管理。",
+        "kelxd": "kelxd.lol → 我的網站！",
+        "kelxdDesc": "我的 GitHub 風格作品集：這是我展示自己的地方。（沒錯，就是這個！）",
+        "fbSystem": "Facebook 帳戶自動化系統",
+        "fbSystemDesc": "點讚、評論、訊息和玩遊戲——就像真人在 Facebook 上瀏覽一樣，但是自動化的！",
+        "clawGame": "Claw Game 夾娃娃版西瓜遊戲",
+        "clawGameDesc": "玩病毒式傳播的西瓜遊戲（Suika Game）……但是在 360° 3D 中！抓取水果、堆疊它們並獲得高分——就像真正的夾娃娃機一樣。在 Windows 上下載並遊玩！",
+        "qubyJump": "Quby Jump 跳一跳遊戲",
+        "qubyJumpDesc": "節奏是一切的快節奏 3D 平台遊戲。按住 [空格鍵] 在平台間跳躍——但一步錯誤 Quby 就會摔倒！你能掌握節奏嗎？立即在瀏覽器中遊玩！",
+        "byyl": "Best Years of Your Life心理恐怖遊戲",
+        "byylDesc": "一款心理恐怖遊戲，深入探討被困高中生的孤立和潛在恐懼。當他們緊抓正常生活時，周圍的世界開始扭曲——微妙的變化腐蝕著環境、互動和現實本身。",
+        "bookstore": "書店網頁設計",
+        "bookstoreDesc": "一個時尚現代的書店網頁設計，具有直觀的佈局、簡易導航和舒適的美學設計。",
+        "kanban": "粉彩主題任務看板",
+        "kanbanDesc": "一個可愛且色彩豐富的看板來組織任務、設定截止日期，並阻止拖延症！輕鬆創建、拖拽和修改任務！（未來將支援登入和雲端保存！）",
+        "weatherWizard": "天氣精靈 iOS APP",
+        "weatherWizardDesc": "天氣精靈 🌦️ - 您的即時預報助手！輸入任何城市或國家並立即獲得：☀️ 當前、最高和最低溫度 | 💧 濕度 | 🌬️ 風速 ☔ 最重要的是：今天會下雨嗎？⏰ 什麼時候？！",
+        "macauCalendar": "澳門現金分享計劃日曆計算機",
+        "macauCalendarDesc": "對您在 2025 年在澳門停留了多少天感到困惑？想知道您是否符合 2026 年的福利資格？這個方便的日曆幫助您輕鬆記錄和計算您的停留時間——這樣您就會確切知道明年可否領取那 1 萬澳門幣！💰💰💰💰"
+    }
+  },
+  "funFacts": {
+    "title": "關於我的小趣事",
+    "fact1-title": "🎮 沈浸式遊戲玩家",
+    "fact1": "我喜歡探索不同的遊戲類型，無論是作為玩家還是開發者。",
+    "fact2-title": "🎵 一人樂隊",
+    "fact2": "主唱、吉他手、貝斯手、鋼琴家、鼓手——隨便你怎麼稱呼我。我本身就是一個完整的樂隊",
+    "fact3-title": "🌏 國際化",
+    "fact3": "出生於澳門🇲🇴，在澳洲留學🇦🇺，在新加坡交換🇸🇬，在香港工作🇭🇰，並去過15+個國家。",
+    "fact4-title": "👩🏻‍🔧 E/ISTP 性格",
+    "fact4": "邏輯、好奇心和對實際解決問題的熱愛的結合。",
+    "fac5-title": "🛠 修補匠的心",
+    "fact5": "無論是構建應用程式、調整遊戲機制，還是學習新技術，我都喜歡弄清楚事物的運作方式。",
+    "fact6-title": "🗾 學習日語",
+    "fact6": "目前在Duolingo上已經堅持學習340+天（頑張ります！）。"
+  },
+  "board": {
+    "title": "互動像素板",
+    "description": "點擊像素來創作你自己的藝術！"
+  },
+  "contact": {
+    "title": "聯繫我！",
+    "description": "通過表單/電子郵件或以下任何聯繫方式聯繫我，了解專案詳情、委託和合作機會",
+    "name": "姓名",
+    "email": "電子郵件",
+    "subject": "主題",
+    "message": "訊息",
+    "send": "發送訊息"
+  },
+  "common": {
+    "title": "全端開發者 | 遊戲開發者 | 音樂製作人/混音師 | 動畫師 | 影片剪輯師",
+    "achievements": "成就",
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "switchLanguage": "語言"
+  }
+}

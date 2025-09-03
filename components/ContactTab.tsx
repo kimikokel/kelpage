@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTranslation } from "../hooks/useTranslation";
 
 interface ContactTabProps {
   copyEmail: () => void;
@@ -62,44 +63,50 @@ const contactStyles = {
   },
 };
 
-const contactMethods = [
-  {
-    platform: "Email",
-    handle: "kellyleong2002@gmail.com",
-    action: "Copy",
-    icon: Mail,
-    style: contactStyles.email,
-  },
-  {
-    platform: "GitHub",
-    handle: "@kimikokel",
-    action: "Follow",
-    link: "https://github.com/kimikokel",
-    icon: Github,
-    style: contactStyles.github,
-  },
-  {
-    platform: "LinkedIn",
-    handle: "Kelly (Kuan Pui) Leong ",
-    action: "Connect",
-    link: "https://www.linkedin.com/in/kelly-leong-a79024327/",
-    icon: Briefcase,
-    style: contactStyles.linkedin,
-  },
-  {
-    platform: "Instagram",
-    handle: "@kelxd_",
-    action: "Follow",
-    link: "https://www.instagram.com/kelxd_/",
-    icon: User,
-    style: contactStyles.instagram,
-  },
-];
-
 export default function ContactTab({
   copyEmail,
   triggerShake,
 }: ContactTabProps) {
+  const { t, isInitialized } = useTranslation();
+
+  // Don't render until translations are initialized
+  if (!isInitialized) {
+    return <div>Loading...</div>;
+  }
+
+  const contactMethods = [
+    {
+      platform: "Email",
+      handle: "kellyleong2002@gmail.com",
+      action: "Copy",
+      icon: Mail,
+      style: contactStyles.email,
+    },
+    {
+      platform: "GitHub",
+      handle: "@kimikokel",
+      action: "Follow",
+      link: "https://github.com/kimikokel",
+      icon: Github,
+      style: contactStyles.github,
+    },
+    {
+      platform: "LinkedIn",
+      handle: "Kelly (Kuan Pui) Leong ",
+      action: "Connect",
+      link: "https://www.linkedin.com/in/kelly-leong-a79024327/",
+      icon: Briefcase,
+      style: contactStyles.linkedin,
+    },
+    {
+      platform: "Instagram",
+      handle: "@kelxd_",
+      action: "Follow",
+      link: "https://www.instagram.com/kelxd_/",
+      icon: User,
+      style: contactStyles.instagram,
+    },
+  ];
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -114,11 +121,10 @@ export default function ContactTab({
             </div>
             <div>
               <CardTitle className="text-xl text-emerald-300">
-                Get In Touch
+                {t("contact.title")}
               </CardTitle>
               <CardDescription className="text-emerald-200/70">
-                Contact me via form/email or any contact below for project
-                details, commissions, and collaboration opportunities
+                {t("contact.description")}
               </CardDescription>
             </div>
           </div>

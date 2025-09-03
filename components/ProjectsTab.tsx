@@ -12,12 +12,26 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useTranslation } from "../hooks/useTranslation";
 
-const projects = [
+interface Project {
+  titleKey?: string;
+  descriptionKey?: string;
+  title?: string; // Legacy support
+  description?: string; // Legacy support
+  tech: string[];
+  image: string;
+  stars: number;
+  forks: number;
+  links?: string;
+  showButton?: boolean;
+  buttonTextKey?: string;
+}
+
+const projects: Project[] = [
   {
-    title: "Enchanted App",
-    description:
-      "The perfect app for plant lovers! Get watering & harvest reminders, seasonal planting guides, soil pH tips, and everything you need to grow your dream garden.",
+    titleKey: "projects.projectDesc.enchanted",
+    descriptionKey: "projects.projectDesc.enchantedDesc",
     tech: [
       "React",
       "TypeScript",
@@ -34,9 +48,8 @@ const projects = [
     forks: 64,
   },
   {
-    title: "Discord Bot",
-    description:
-      "All-in-one discord bot for weather forecasts, AI chats, stream alerts from your favourite creator, role management, and server moderation.",
+    titleKey: "projects.projectDesc.dcBot",
+    descriptionKey: "projects.projectDesc.dcBotDesc",
     tech: [
       "Python",
       "OpenWeather API",
@@ -49,75 +62,68 @@ const projects = [
     forks: 12,
   },
   {
-    title: "kelxd.lol → My Website!",
-    description:
-      "My GitHub-Style Portfolio: this is where I show off myself. (Yep, you're on it!)",
+    titleKey: "projects.projectDesc.kelxd",
+    descriptionKey: "projects.projectDesc.kelxdDesc",
     tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "AWS Cloud Host"],
     image: "/website.jpeg?height=200&width=400",
     stars: 120,
     forks: 5,
   },
   {
-    title: "Facebook Account Automation System",
-    description:
-      "Like, comment, message, and play games—just like a real person surfing on Facebook, but automated!",
+    titleKey: "projects.projectDesc.fbSystem",
+    descriptionKey: "projects.projectDesc.fbSystemDesc",
     tech: ["Python", "Selenium", "Pyautogui", "Chromedriver"],
     image: "/fb.jpeg?height=200&width=400",
     stars: 66,
     forks: 36,
   },
   {
-    title: "Claw Game",
-    description:
-      "Play the viral Suika Game (Watermelon Game)… but in 360° 3D! Grab fruits, stack them, and score big—just like a real claw machine. Download and play the game in Windows!",
+    titleKey: "projects.projectDesc.clawGame",
+    descriptionKey: "projects.projectDesc.clawGameDesc",
     tech: ["Unity 3D", "C#", "Maya", "Adobe Ps"],
     image: "/clawgame.jpeg?height=400&width=400",
     stars: 99,
     forks: 81,
     links: "https://kelxdlol.itch.io/claw-game",
     showButton: true,
-    buttonText: "Play Claw Game",
+    buttonTextKey: "projects.playClawGame",
   },
   {
-    title: "Quby Jump",
-    description:
-      "A fast-paced 3D platformer where timing is everything. Hold [SPACE] to jump between platforms—but one wrong move and Quby takes a tumble! Can you master the rhythm? Play now in browser!",
+    titleKey: "projects.projectDesc.qubyJump",
+    descriptionKey: "projects.projectDesc.qubyJumpDesc",
     tech: ["Unity 3D", "C#", "Adobe Ps"],
     image: "/quby.jpeg?height=200&width=400",
     stars: 37,
     forks: 21,
     links: "https://kelxdlol.itch.io/quby-jump",
     showButton: true,
-    buttonText: "Play Quby Jump",
+    buttonTextKey: "projects.playQubyJump",
   },
   {
-    title: "Best Years of Your Life",
-    description:
-      "A psychological horror game delving into the isolation and creeping dread of a trapped high school student. As they cling to normalcy, the world around them twists—subtle changes corrupt the environment, interactions, and reality itself. Watch the trailer → https://www.youtube.com/watch?v=aXvWv8X5czQ",
+    titleKey: "projects.projectDesc.byyl",
+    descriptionKey: "projects.projectDesc.byylDesc",
     tech: ["Unity 3D", "C#", "Github", "Adobe AE", "Maya", "Adobe Ai"],
     image: "/BYYL.jpeg?height=200&width=400",
     stars: 20,
     forks: 25,
     links: "https://www.youtube.com/watch?v=aXvWv8X5czQ",
     showButton: true,
-    buttonText: "Watch Trailer",
+    buttonTextKey: "projects.watchTrailer",
   },
   {
-    title: "Bookstore Web Design",
-    description:
-      "UI Design for an Online Bookstore: Women & Children First. This design was created with vanilla HTML. The playful, child-friendly theme matches the bookstore's focus on women and children.",
+    titleKey: "projects.projectDesc.bookstore",
+    descriptionKey: "projects.projectDesc.bookstoreDesc",
     tech: ["HTML", "CSS", "JavaScript", "Adobe XD", "Adobe Ai"],
     image: "/wcf.png?height=200&width=400",
     stars: 26,
     forks: 12,
     links: "https://kelxd.lol/bookstore",
     showButton: true,
-    buttonText: "View Design",
+    buttonTextKey: "projects.viewDesign",
   },
   {
-    title: "Pastel Themed Kanban Board",
-    description:
-      "A cute & colourful Kanban board to organise tasks, set deadlines, and stop procrastination in its tracks! Create, drag, and modify tasks with ease! (Support login and cloud save in the future!)",
+    titleKey: "projects.projectDesc.kanban",
+    descriptionKey: "projects.projectDesc.kanbanDesc",
     tech: [
       "Vue.js",
       "Tailwind CSS",
@@ -131,12 +137,11 @@ const projects = [
     forks: 88,
     links: "https://kelxd.lol/kelboard/",
     showButton: true,
-    buttonText: "Try it out",
+    buttonTextKey: "projects.tryItOut",
   },
   {
-    title: "Weather Wizard IOS APP",
-    description:
-      "Weather Wizard 🌦️ - Your Instant Forecast Sidekick!\nType any city or country and instantly get:\n☀️ Current, high & low temps | 💧 Humidity | 🌬️ Wind speed\n☔ Most importantly: Will it rain today? ⏰ When?!",
+    titleKey: "projects.projectDesc.weatherWizard",
+    descriptionKey: "projects.projectDesc.weatherWizardDesc",
     tech: ["React Native", "JavaScript", "Node.js", "Expo"],
     image: "/weatherwizard.png?height=200&width=400",
     stars: 77,
@@ -144,20 +149,26 @@ const projects = [
     showButton: false,
   },
   {
-    title: "Macau Wealth Partaking Scheme Calendar Calculator",
-    description:
-      "Confused about how many days you stayed in Macau in 2025? Wondering if you qualify for the 2026 benefits? This handy calendar helps you easily log and count your stay—so you’ll know exactly whether you’ve earned that 10k MOP next year! 💰💰💰💰",
+    titleKey: "projects.projectDesc.macauCalendar",
+    descriptionKey: "projects.projectDesc.macauCalendarDesc",
     tech: ["HTML", "CSS", "JavaScript"],
-    image: "/macaucalendarcal.png?height=200&width=400",
+    image: "/macaucalendar.jpg?height=200&width=400",
     stars: 183,
     forks: 2025,
     links: "https://kelxd.lol/macaucalendar/",
     showButton: true,
-    buttonText: "Calculate now!",
+    buttonTextKey: "projects.calculateNow",
   },
 ];
 
 export default function ProjectsTab() {
+  const { t, isInitialized } = useTranslation();
+
+  // Don't render until translations are initialized
+  if (!isInitialized) {
+    return <div>Loading...</div>;
+  }
+
   // Define color schemes for different project types
   const getProjectStyle = (index: number) => {
     const styles = [
@@ -235,7 +246,11 @@ export default function ProjectsTab() {
                   ></div>
                   <img
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    alt={
+                      project.titleKey
+                        ? t(project.titleKey)
+                        : project.title || "Project"
+                    }
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                   <div className="absolute top-2 right-2 flex gap-2">
@@ -257,10 +272,12 @@ export default function ProjectsTab() {
                   className={`${style.headerBg} border-b ${style.border}`}
                 >
                   <CardTitle className={`text-xl ${style.titleColor}`}>
-                    {project.title}
+                    {project.titleKey ? t(project.titleKey) : project.title}
                   </CardTitle>
                   <CardDescription className="text-[#c9d1d9]/80">
-                    {project.description}
+                    {project.descriptionKey
+                      ? t(project.descriptionKey)
+                      : project.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-4">
@@ -297,7 +314,9 @@ export default function ProjectsTab() {
                           window.open(project.links, "_blank")?.focus
                         }
                       >
-                        {project.buttonText}
+                        {project.buttonTextKey
+                          ? t(project.buttonTextKey)
+                          : t("projects.viewProject")}
                       </Button>
                     )}
                   </div>

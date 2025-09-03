@@ -1,0 +1,112 @@
+{
+  "navigation": {
+    "overview": "Overview",
+    "skills": "Skills",
+    "projects": "Projects",
+    "funFacts": "Fun Facts",
+    "contact": "Contact"
+  },
+  "overview": {
+    "title": "About Me",
+    "greeting": "Hey there! 👋 I'm Kel / Kelly, a <span class='text-indigo-300'>full-stack developer</span> specialising in end-to-end digital solutions. 💻✨",
+    "services": "🌐 <span class='text-blue-300'>Websites</span>& web applications,|📱 <span class='text-violet-300'>Mobile apps</span> for iOS & Android,|💼 <span class='text-green-400'>Business systems</span> & enterprise solutions,|🛒 <span class='text-yellow-400'>E-commerce</span> & webstore platforms,|🎮 <span class='text-pink-300'>Games</span> & interactive experiences,|🎵 <span class='text-purple-400'>Music production</span> & audio mixing services,|🎬 <span class='text-cyan-400'>Video editing</span> & animation video commissions",
+    "offering": "I offer <span class='text-yellow-400'>custom development</span>, <span class='text-cyan-400'>commission work</span>, and <span class='text-red-400'>freelance projects</span> to bring your ideas to life. ✨ From concept to deployment, I handle the full <span class='text-green-400'>development lifecycle</span> for businesses of all sizes. 🚀",
+    "nav": {
+        "title": "Navigations",
+        "skillsDesc": "Check out my technical skills and expertise",
+        "projectsDesc": "Browse through my portfolio of projects", 
+        "funFactsDesc": "Discover interesting facts about me",
+        "contactDesc": "Get in touch with me"
+    },
+    "stats": {
+      "title": "Project Stats",
+      "coding": "Coding Projects",
+      "games": "Games Developed",
+      "audio": "Audio Mixing",
+      "video": "Video Production"
+    }
+  },
+  "skills": {
+    "titleTech": "Technical Skills",
+    "language": "Programming Languages",
+    "frontend": "Frontend Technologies",
+    "backend": "Backend & Database", 
+    "tools": "Development Tools & DevOps",
+    "others": "Design & Others",
+    "titleMulti": "Multimedia Related Skills",
+    "game3D": "Game Development & 3D Design",
+    "video": "Photo & Video / Animation Production",
+    "audio": "Music & Audio Production"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "viewProject": "View Project",
+    "playClawGame": "Play Claw Game",
+    "playQubyJump": "Play Quby Jump",
+    "watchTrailer": "Watch Trailer",
+    "viewDesign": "View Design",
+    "tryItOut": "Try It Out",
+    "calculateNow": "Calculate Now",
+    "stars": "stars",
+    "forks": "forks",
+    "projectDesc": {
+        "enchanted": "Enchanted Gardening App", 
+        "enchantedDesc": "The perfect app for plant lovers! Get watering & harvest reminders, seasonal planting guides, soil pH tips, and everything you need to grow your dream garden.",
+        "dcBot": "Discord Bot",
+        "dcBotDesc": "All-in-one discord bot for weather forecasts, AI chats, stream alerts from your favourite creator, role management, and server moderation.",
+        "kelxd": "kelxd.lol → My Website!",
+        "kelxdDesc": "My GitHub-Style Portfolio: this is where I show off myself. (Yep, you're on it!)",
+        "fbSystem": "Facebook Account Automation System",
+        "fbSystemDesc": "Like, comment, message, and play games—just like a real person surfing on Facebook, but automated!",
+        "clawGame": "Claw Game",
+        "clawGameDesc": "Play the viral Suika Game (Watermelon Game)… but in 360° 3D! Grab fruits, stack them, and score big—just like a real claw machine. Download and play the game in Windows!",
+        "qubyJump": "Quby Jump",
+        "qubyJumpDesc": "A fast-paced 3D platformer where timing is everything. Hold [SPACE] to jump between platforms—but one wrong move and Quby takes a tumble! Can you master the rhythm? Play now in browser!",
+        "byyl": "Best Years of Your Life",
+        "byylDesc": "A psychological horror game delving into the isolation and creeping dread of a trapped high school student. As they cling to normalcy, the world around them twists—subtle changes corrupt the environment, interactions, and reality itself.",
+        "bookstore": "Bookstore Web Design",
+        "bookstoreDesc": "A sleek and modern web design for a bookstore, featuring an intuitive layout, easy navigation, and a cozy aesthetic.",
+        "kanban": "Pastel Themed Kanban Board",
+        "kanbanDesc": "A cute & colourful Kanban board to organise tasks, set deadlines, and stop procrastination in its tracks! Create, drag, and modify tasks with ease! (Support login and cloud save in the future!)",
+        "weatherWizard": "Weather Wizard IOS APP",
+        "weatherWizardDesc": "Weather Wizard 🌦️ - Your Instant Forecast Sidekick! Type any city or country and instantly get: ☀️ Current, high & low temps | 💧 Humidity | 🌬️ Wind speed ☔ Most importantly: Will it rain today? ⏰ When?!",
+        "macauCalendar": "Macau Wealth Partaking Scheme Calendar Calculator",
+        "macauCalendarDesc": "Confused about how many days you stayed in Macau in 2025? Wondering if you qualify for the 2026 benefits? This handy calendar helps you easily log and count your stay—so you’ll know exactly whether you’ve earned that 10k MOP next year! 💰💰💰💰"
+    }
+  },
+  "funFacts": {
+    "title": "Fun Facts About Me",
+    "fact1-title": "🎮 Gamer at Heart",
+    "fact1": "I enjoy exploring different game genres, both as a player and a developer.",
+    "fact2-title": "🎵 One-Man Band",
+    "fact2": "Vocalist, guitarist, bassist, pianist, drummer—call me whatever you want. I am a full band myself",
+    "fact3-title": "🌏 International Experience",
+    "fact3": "Born in Macau🇲🇴, studied in Australia🇦🇺, exchanged in Singapore🇸🇬, working in Hong Kong🇭🇰 and went to 15+ countries.",
+    "fact4-title": "👩🏻‍🔧 E/ISTP Personality",
+    "fact4": "A mix of logic, curiosity, and a love for hands-on problem-solving.",
+    "fac5-title": "🛠 Tinkerer at Heart",
+    "fact5": "Whether it's building apps, tweaking game mechanics, or learning new tech, I love figuring out how things work.",
+    "fact6-title": "🗾 Learning Japanese",
+    "fact6": "Currently grinding through Duolingo for 340+ days (頑張ります!)."
+  },
+  "board": {
+    "title": "Interactive Pixel Board",
+    "description": "Click on the pixels to create your own art!"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Contact me via form/email or any contact below for project details, commissions, and collaboration opportunities",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "common": {
+    "title": "Full-Stack Developer | Game Developer | Music Producer/Mixer | Animator | Video Editor",
+    "achievements": "Achievements",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "switchLanguage": "Language"
+  }
+}

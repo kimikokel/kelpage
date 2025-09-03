@@ -1,5 +1,6 @@
 import React, { useRef, useState, ChangeEvent, FormEvent } from "react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/hooks/useTranslation";
 
 type ContactFormProps = {
   triggerShake: () => void;
@@ -7,6 +8,7 @@ type ContactFormProps = {
 
 export default function ContactForm({ triggerShake }: ContactFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
+  const { t, isInitialized } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,7 +53,7 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <label htmlFor="name" className="text-sm font-medium">
-            Name
+            {t("contact.name")}
           </label>
           <input
             id="name"
@@ -63,7 +65,7 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
         </div>
         <div className="space-y-2">
           <label htmlFor="email" className="text-sm font-medium">
-            Email
+            {t("contact.email")}
           </label>
           <input
             id="email"
@@ -77,7 +79,7 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
       </div>
       <div className="space-y-2">
         <label htmlFor="subject" className="text-sm font-medium">
-          Subject
+          {t("contact.subject")}
         </label>
         <input
           id="subject"
@@ -89,7 +91,7 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
       </div>
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium">
-          Message
+          {t("contact.message")}
         </label>
         <textarea
           id="message"
@@ -109,7 +111,7 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
         type="submit"
         className="w-full bg-[#238636] hover:bg-[#2ea043] text-white"
       >
-        Send Message
+        {t("contact.send")}
       </Button>
     </form>
   );
