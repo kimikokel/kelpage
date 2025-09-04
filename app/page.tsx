@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Star, Code, Briefcase, Coffee, Mail } from "lucide-react";
