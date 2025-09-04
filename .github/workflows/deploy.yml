@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout Kelpage Code
         uses: actions/checkout@v3
-        
+
       - name: Setup Node.js and Build
         uses: actions/setup-node@v3
         with:
@@ -34,7 +34,8 @@ jobs:
           # Delete the old kelpage files in the deployment repo
           rm -rf deploy-repo/kelpage
           # Copy the new build files into the deployment repo
-          cp -r build/ deploy-repo/kelpage/
+          cp -r out/ deploy-repo/kelpage/
+
 
       - name: Commit and Push to Deployment Repo
         run: |
