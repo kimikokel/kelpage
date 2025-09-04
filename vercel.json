@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/kelboard",
+      "destination": "https://kelboard.vercel.app"
+    },
+    {
+      "source": "/kelboard/:path*",
+      "destination": "https://kelboard.vercel.app/:path*"
+    }
+  ]
+}
