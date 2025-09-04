@@ -1,0 +1,46 @@
+name: Build and Deploy to Production Repo
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Kelpage Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Checkout Deployment Repo
+        uses: actions/checkout@v3
+        with:
+          repository: kimikokel/kelxd-deploy
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          path: deploy-repo
+
+      - name: Copy Build to Deployment Repo
+        run: |
+          # Delete the old kelpage files in the deployment repo
+          rm -rf deploy-repo/kelpage
+          # Copy the new build files into the deployment repo
+          cp -r build/ deploy-repo/kelpage/
+
+      - name: Commit and Push to Deployment Repo
+        run: |
+          cd deploy-repo
+          git config user.name "GitHub Actions Bot"
+          git config user.email "github-actions-bot@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy Kelpage from $GITHUB_SHA"
+          git push
