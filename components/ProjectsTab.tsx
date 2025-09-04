@@ -135,7 +135,7 @@ const projects: Project[] = [
     image: "/kanban.jpg?height=200&width=400",
     stars: 99,
     forks: 88,
-    links: "https://kelxd.lol/kelboard/",
+    links: "https://kelboard.kelxd.lol/",
     showButton: true,
     buttonTextKey: "projects.tryItOut",
   },
