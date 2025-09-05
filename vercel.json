@@ -1,12 +1,20 @@
 {
   "rewrites": [
     {
-      "source": "/kelboard",
-      "destination": "https://kelboard.vercel.app"
+      "source": "/bookstore",
+      "destination": "https://main.d7qiai7u4ok60.amplifyapp.com/bookstore"
     },
     {
-      "source": "/kelboard/:path*",
-      "destination": "https://kelboard.vercel.app/:path*"
+      "source": "/bookstore/:path*",
+      "destination": "https://main.d7qiai7u4ok60.amplifyapp.com/bookstore/:path*"
+    },
+    {
+      "source": "/macaucalendar",
+      "destination": "https://main.d7qiai7u4ok60.amplifyapp.com/macaucalendar"
+    },
+    {
+      "source": "/macaucalendar/:path*",
+      "destination": "https://main.d7qiai7u4ok60.amplifyapp.com/macaucalendar/:path*"
     }
   ]
 }
