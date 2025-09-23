@@ -22,6 +22,10 @@ const nextConfig = {
           source: '/macaucalendar/:path*',
           destination: 'https://main.d7qiai7u4ok60.amplifyapp.com/macaucalendar/:path*',
         },
+        {
+          source: '/kelist/:path*',
+          destination: 'https://main.d7qiai7u4ok60.amplifyapp.com/kelist/:path*',
+        },
       ],
     }
   },
