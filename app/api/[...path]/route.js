@@ -29,10 +29,27 @@ export async function OPTIONS(request, { params }) {
   });
 }
 
-async function handleRequest(method, request, { params }) {
+async function handleRequest(method, request, params) {
   try {
-    const pathArray = params.path || [];
+    // Debug logging
+    console.log('Request params:', params);
+    console.log('Request URL:', request.url);
+    
+    // Extract path from params - handle both possible structures
+    let pathArray = [];
+    if (params && params.path) {
+      pathArray = Array.isArray(params.path) ? params.path : [params.path];
+    } else {
+      // Fallback: extract from URL
+      const url = new URL(request.url);
+      const pathParts = url.pathname.split('/api/')[1];
+      if (pathParts) {
+        pathArray = pathParts.split('/').filter(Boolean);
+      }
+    }
+    
     const pathString = pathArray.join('/');
+    console.log('Extracted path:', pathString);
     
     const apiUrl = `http://18.141.202.4/api/${pathString}`;
     console.log('Proxying to:', apiUrl);
@@ -42,7 +59,7 @@ async function handleRequest(method, request, { params }) {
       try {
         body = await request.text();
       } catch (e) {
-        // If no body, that's fine
+        console.log('No body to read');
       }
     }
     
@@ -55,6 +72,8 @@ async function handleRequest(method, request, { params }) {
       body: body || undefined,
     });
     
+    console.log('Response status:', response.status);
+    
     const contentType = response.headers.get('content-type');
     let data;
     
@@ -63,6 +82,8 @@ async function handleRequest(method, request, { params }) {
     } else {
       data = await response.text();
     }
+    
+    console.log('Response data:', data);
     
     // Create response with CORS headers
     const nextResponse = NextResponse.json(data, {
@@ -79,8 +100,14 @@ async function handleRequest(method, request, { params }) {
     
   } catch (error) {
     console.error('API Proxy Error:', error);
+    console.error('Error stack:', error.stack);
+    
     return NextResponse.json(
-      { error: 'Failed to proxy request', details: error.message },
+      { 
+        error: 'Failed to proxy request', 
+        details: error.message,
+        stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      },
       {
         status: 500,
         headers: {
