@@ -87,7 +87,7 @@
     "fac5-title": "🛠 Tinkerer at Heart",
     "fact5": "Whether it's building apps, tweaking game mechanics, or learning new tech, I love figuring out how things work.",
     "fact6-title": "🗾 Learning Japanese",
-    "fact6": "Currently grinding through Duolingo for 340+ days (頑張ります!)."
+    "fact6": "Currently grinding through Duolingo for {days} days (頑張ります!)."
   },
   "board": {
     "title": "Interactive Pixel Board",

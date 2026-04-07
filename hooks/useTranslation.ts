@@ -7,6 +7,8 @@ const translations = {
   zh,
 };
 
+type TranslationParams = Record<string, string | number>;
+
 export const useTranslation = () => {
   const [locale, setLocale] = useState('en'); // Always default to English
   const [isInitialized, setIsInitialized] = useState(false);
@@ -24,15 +26,27 @@ export const useTranslation = () => {
     setIsInitialized(true);
   }, []);
 
-  const t = (key: string) => {
+  const t = (key: string, params?: TranslationParams) => {
     const keys = key.split('.');
     let value: any = translations[locale as keyof typeof translations];
     
     for (const k of keys) {
       value = value?.[k];
     }
-    
-    return value || key;
+
+    if (typeof value !== 'string') {
+      return value || key;
+    }
+
+    if (!params) {
+      return value;
+    }
+
+    return value.replace(/\{(\w+)\}/g, (_, paramKey: string) => {
+      const paramValue = params[paramKey];
+
+      return paramValue === undefined ? `{${paramKey}}` : String(paramValue);
+    });
   };
 
   const switchLanguage = (newLocale: string) => {
