@@ -26,6 +26,10 @@ const nextConfig = {
           source: '/kelist/:path*',
           destination: 'https://main.d7qiai7u4ok60.amplifyapp.com/kelist/:path*',
         },
+        {  
+          "source": "/520jayden/:path*",
+          "destination": "https://main.d7qiai7u4ok60.amplifyapp.com/520jayden/:path*"
+        }
       ],
     }
   },
