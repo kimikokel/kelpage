@@ -70,6 +70,14 @@
         "kanbanDesc": "A cute & colourful Kanban board to organise tasks, set deadlines, and stop procrastination in its tracks! Create, drag, and modify tasks with ease! (Support login and cloud save in the future!)",
         "weatherWizard": "Weather Wizard IOS APP",
         "weatherWizardDesc": "Weather Wizard 🌦️ - Your Instant Forecast Sidekick! Type any city or country and instantly get: ☀️ Current, high & low temps | 💧 Humidity | 🌬️ Wind speed ☔ Most importantly: Will it rain today? ⏰ When?!",
+        "mflow": "mFlow - Period Tracker iOS App",
+        "mflowDesc": "A beautiful and private period tracker for iOS with accurate cycle predictions, symptom logs, sexual activity records, and personalized health insights.",
+        "giveupBot": "Telegram Social Event Management Bot",
+        "giveupBotDesc": "A Telegram mini app + bot for creating, hosting, joining, and managing events in group chats, with inline commands like /list to instantly show upcoming events.",
+        "stocksTracker": "Stocks Tracker & Financial Calculator",
+        "stocksTrackerDesc": "Track purchased HK and US stocks with position values, gain/loss analytics, buy and sell timing, and built-in financial calculation tools for smarter decisions.",
+        "streamerSongList": "Streamer Karaoke Song Request List",
+        "streamerSongListDesc": "A viewer request system for livestream karaoke sessions where audiences can queue songs for the streamer, powered by Spotify API integration.",
         "macauCalendar": "Macau Wealth Partaking Scheme Calendar Calculator",
         "macauCalendarDesc": "Confused about how many days you stayed in Macau in 2025? Wondering if you qualify for the 2026 benefits? This handy calendar helps you easily log and count your stay—so you’ll know exactly whether you’ve earned that 10k MOP next year! 💰💰💰💰"
     }

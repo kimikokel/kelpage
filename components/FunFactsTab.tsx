@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/card";
 import { useTranslation } from "../hooks/useTranslation";
 
-const DUOLINGO_STREAK_START = "2024-12-03";
+const DUOLINGO_STREAK_START = "2024-11-20";
 
 // Define color schemes for different fun facts
 const factStyles = {
@@ -198,21 +198,20 @@ export default function FunFactsTab() {
   const { t, isInitialized } = useTranslation();
 
   const getDuolingoStreakDays = () => {
-    const [startYear, startMonth, startDay] = DUOLINGO_STREAK_START
-      .split("-")
-      .map(Number);
+    const [startYear, startMonth, startDay] =
+      DUOLINGO_STREAK_START.split("-").map(Number);
     const today = new Date();
     const startDate = Date.UTC(startYear, startMonth - 1, startDay);
     const currentDate = Date.UTC(
       today.getFullYear(),
       today.getMonth(),
-      today.getDate()
+      today.getDate(),
     );
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
 
     return Math.max(
       0,
-      Math.floor((currentDate - startDate) / millisecondsPerDay)
+      Math.floor((currentDate - startDate) / millisecondsPerDay),
     );
   };
 
@@ -268,7 +267,7 @@ export default function FunFactsTab() {
                       fact.descriptionKey,
                       fact.descriptionKey === "funFacts.fact6"
                         ? { days: duolingoStreakDays }
-                        : undefined
+                        : undefined,
                     )}
                   </p>
                 </div>

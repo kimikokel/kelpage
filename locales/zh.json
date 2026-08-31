@@ -70,6 +70,14 @@
         "kanbanDesc": "一個可愛且色彩豐富的看板來組織任務、設定截止日期，並阻止拖延症！輕鬆創建、拖拽和修改任務！（未來將支援登入和雲端保存！）",
         "weatherWizard": "天氣精靈 iOS APP",
         "weatherWizardDesc": "天氣精靈 🌦️ - 您的即時預報助手！輸入任何城市或國家並立即獲得：☀️ 當前、最高和最低溫度 | 💧 濕度 | 🌬️ 風速 ☔ 最重要的是：今天會下雨嗎？⏰ 什麼時候？！",
+        "mflow": "mFlow iOS 生理週期追蹤器",
+        "mflowDesc": "一款美觀、私密且精準的 iOS 生理追蹤 App，可記錄週期、症狀與性行為，並提供個人化健康洞察與預測。",
+        "giveupBot": "Telegram 社交活動管理 Bot",
+        "giveupBotDesc": "結合 Telegram Mini App 與 Bot，支援建立、管理、加入與主辦活動，並可在群組中使用 /list 等 inline 指令快速查看活動清單。",
+        "stocksTracker": "股票追蹤與財務計算器",
+        "stocksTrackerDesc": "追蹤已買入的港股與美股，查看持倉價值、盈虧分析、買賣時機與預測，並整合常用財務計算功能。",
+        "streamerSongList": "實況主點歌單（觀眾點歌系統）",
+        "streamerSongListDesc": "讓觀眾在直播中為實況主點歌的卡拉 OK 歌單系統，整合 Spotify API 管理歌曲排隊與播放流程。",
         "macauCalendar": "澳門現金分享計劃日曆計算機",
         "macauCalendarDesc": "對您在 2025 年在澳門停留了多少天感到困惑？想知道您是否符合 2026 年的福利資格？這個方便的日曆幫助您輕鬆記錄和計算您的停留時間——這樣您就會確切知道明年可否領取那 1 萬澳門幣！💰💰💰💰"
     }
