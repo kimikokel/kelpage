@@ -46,7 +46,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
             <div className="xai-pill h-8 w-8 border-[#212327]">
               <Music className="h-4 w-4" />
             </div>
-            <span className="xai-eyebrow hidden sm:inline">Kel Studio</span>
+            <span className="xai-eyebrow hidden sm:inline">kel's site</span>
           </motion.div>
         </div>
 
@@ -62,7 +62,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                 value="overview"
                 className={cn(
                   "font-mono text-[11px] uppercase tracking-[0.14em] text-[#7d8187]",
-                  "data-[state=active]:text-white"
+                  "data-[state=active]:text-white",
                 )}
               >
                 <Star></Star>&nbsp;{t("navigation.overview")}
@@ -71,7 +71,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                 value="skills"
                 className={cn(
                   "font-mono text-[11px] uppercase tracking-[0.14em] text-[#7d8187]",
-                  "data-[state=active]:text-white"
+                  "data-[state=active]:text-white",
                 )}
               >
                 <Code></Code>&nbsp;{t("navigation.skills")}
@@ -80,7 +80,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                 value="projects"
                 className={cn(
                   "font-mono text-[11px] uppercase tracking-[0.14em] text-[#7d8187]",
-                  "data-[state=active]:text-white"
+                  "data-[state=active]:text-white",
                 )}
               >
                 <Briefcase></Briefcase>&nbsp;{t("navigation.projects")}
@@ -89,7 +89,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                 value="funfacts"
                 className={cn(
                   "font-mono text-[11px] uppercase tracking-[0.14em] text-[#7d8187]",
-                  "data-[state=active]:text-white"
+                  "data-[state=active]:text-white",
                 )}
               >
                 <CoffeeIcon></CoffeeIcon> &nbsp;{t("navigation.funFacts")}
@@ -98,7 +98,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                 value="contact"
                 className={cn(
                   "font-mono text-[11px] uppercase tracking-[0.14em] text-[#7d8187]",
-                  "data-[state=active]:text-white"
+                  "data-[state=active]:text-white",
                 )}
               >
                 <Mail></Mail>&nbsp;{t("navigation.contact")}
@@ -142,7 +142,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                     "w-full flex items-center px-3 py-2 rounded-full border text-left text-sm transition-colors",
                     activeTab === "overview"
                       ? "border-white/30 bg-white/10 text-white"
-                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5"
+                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5",
                   )}
                 >
                   <Star className="mr-3 h-4 w-4" />
@@ -157,7 +157,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                     "w-full flex items-center px-3 py-2 rounded-full border text-left text-sm transition-colors",
                     activeTab === "skills"
                       ? "border-white/30 bg-white/10 text-white"
-                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5"
+                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5",
                   )}
                 >
                   <Code className="mr-3 h-4 w-4" />
@@ -172,7 +172,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                     "w-full flex items-center px-3 py-2 rounded-full border text-left text-sm transition-colors",
                     activeTab === "projects"
                       ? "border-white/30 bg-white/10 text-white"
-                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5"
+                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5",
                   )}
                 >
                   <Briefcase className="mr-3 h-4 w-4" />
@@ -187,7 +187,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                     "w-full flex items-center px-3 py-2 rounded-full border text-left text-sm transition-colors",
                     activeTab === "funfacts"
                       ? "border-white/30 bg-white/10 text-white"
-                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5"
+                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5",
                   )}
                 >
                   <CoffeeIcon className="mr-3 h-4 w-4" />
@@ -202,7 +202,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
                     "w-full flex items-center px-3 py-2 rounded-full border text-left text-sm transition-colors",
                     activeTab === "contact"
                       ? "border-white/30 bg-white/10 text-white"
-                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5"
+                      : "border-[#212327] text-[#dadbdf] hover:border-white/20 hover:bg-white/5",
                   )}
                 >
                   <Mail className="mr-3 h-4 w-4" />

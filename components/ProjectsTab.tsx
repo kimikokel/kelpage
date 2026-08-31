@@ -30,6 +30,53 @@ interface Project {
 
 const projects: Project[] = [
   {
+    titleKey: "projects.projectDesc.kelxd",
+    descriptionKey: "projects.projectDesc.kelxdDesc",
+    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "AWS Cloud Host"],
+    image: "/website.jpeg?height=200&width=400",
+    stars: 120,
+    forks: 5,
+  },
+  {
+    titleKey: "projects.projectDesc.mflow",
+    descriptionKey: "projects.projectDesc.mflowDesc",
+    tech: ["iOS", "Swift 6", "SwiftUI", "SwiftData", "Firebase"],
+    image: "/mflow.jpg?height=200&width=400",
+    stars: 13,
+    forks: 14,
+    showButton: false,
+  },
+  {
+    titleKey: "projects.projectDesc.giveupBot",
+    descriptionKey: "projects.projectDesc.giveupBotDesc",
+    tech: [
+      "Telegram Mini App",
+      "Telegram Bot",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Node.js",
+      "Express",
+      "Telegraf",
+      "Prisma",
+      "SQLite",
+    ],
+    image: "/giveupbot.png?height=200&width=400",
+    stars: 223,
+    forks: 332,
+    showButton: false,
+  },
+  {
+    titleKey: "projects.projectDesc.stocksTracker",
+    descriptionKey: "projects.projectDesc.stocksTrackerDesc",
+    tech: ["Node.js", "JavaScript", "HTML", "OpenAPI"],
+    image: "/stocks.jpg?height=200&width=400",
+    stars: 67,
+    forks: 76,
+    showButton: false,
+  },
+  {
     titleKey: "projects.projectDesc.enchanted",
     descriptionKey: "projects.projectDesc.enchantedDesc",
     tech: [
@@ -60,14 +107,6 @@ const projects: Project[] = [
     image: "/dcbot.jpg?height=200&width=400",
     stars: 369,
     forks: 12,
-  },
-  {
-    titleKey: "projects.projectDesc.kelxd",
-    descriptionKey: "projects.projectDesc.kelxdDesc",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "AWS Cloud Host"],
-    image: "/website.jpeg?height=200&width=400",
-    stars: 120,
-    forks: 5,
   },
   {
     titleKey: "projects.projectDesc.fbSystem",
@@ -122,6 +161,17 @@ const projects: Project[] = [
     buttonTextKey: "projects.viewDesign",
   },
   {
+    titleKey: "projects.projectDesc.macauCalendar",
+    descriptionKey: "projects.projectDesc.macauCalendarDesc",
+    tech: ["HTML", "CSS", "JavaScript"],
+    image: "/macaucalendar.jpg?height=200&width=400",
+    stars: 183,
+    forks: 2025,
+    links: "https://kelxd.lol/macaucalendar/",
+    showButton: true,
+    buttonTextKey: "projects.calculateNow",
+  },
+  {
     titleKey: "projects.projectDesc.kanban",
     descriptionKey: "projects.projectDesc.kanbanDesc",
     tech: [
@@ -149,45 +199,6 @@ const projects: Project[] = [
     showButton: false,
   },
   {
-    titleKey: "projects.projectDesc.mflow",
-    descriptionKey: "projects.projectDesc.mflowDesc",
-    tech: ["iOS", "Swift 6", "SwiftUI", "SwiftData", "Firebase"],
-    image: "/mflow.jpg?height=200&width=400",
-    stars: 13,
-    forks: 14,
-    showButton: false,
-  },
-  {
-    titleKey: "projects.projectDesc.giveupBot",
-    descriptionKey: "projects.projectDesc.giveupBotDesc",
-    tech: [
-      "Telegram Mini App",
-      "Telegram Bot",
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Node.js",
-      "Express",
-      "Telegraf",
-      "Prisma",
-      "SQLite",
-    ],
-    image: "/giveupbot.png?height=200&width=400",
-    stars: 223,
-    forks: 332,
-    showButton: false,
-  },
-  {
-    titleKey: "projects.projectDesc.stocksTracker",
-    descriptionKey: "projects.projectDesc.stocksTrackerDesc",
-    tech: ["Node.js", "JavaScript", "HTML", "OpenAPI"],
-    image: "/stocks.jpg?height=200&width=400",
-    stars: 67,
-    forks: 76,
-    showButton: false,
-  },
-  {
     titleKey: "projects.projectDesc.streamerSongList",
     descriptionKey: "projects.projectDesc.streamerSongListDesc",
     tech: ["Spotify API", "Python", "JavaScript", "HTML", "CSS"],
@@ -197,17 +208,6 @@ const projects: Project[] = [
     links: "https://kimikovt.link",
     showButton: true,
     buttonTextKey: "projects.tryItOut",
-  },
-  {
-    titleKey: "projects.projectDesc.macauCalendar",
-    descriptionKey: "projects.projectDesc.macauCalendarDesc",
-    tech: ["HTML", "CSS", "JavaScript"],
-    image: "/macaucalendar.jpg?height=200&width=400",
-    stars: 183,
-    forks: 2025,
-    links: "https://kelxd.lol/macaucalendar/",
-    showButton: true,
-    buttonTextKey: "projects.calculateNow",
   },
 ];
 
@@ -297,12 +297,6 @@ export default function ProjectsTab() {
                 className={`${style.bg} ${style.border} ${style.hover} h-full overflow-hidden transition-colors duration-300`}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <div
-                    className={`absolute inset-0 ${style.headerBg}`}
-                  ></div>
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${style.tint}`}
-                  ></div>
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={
@@ -310,9 +304,15 @@ export default function ProjectsTab() {
                         ? t(project.titleKey)
                         : project.title || "Project"
                     }
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    className="relative z-0 h-full w-full object-cover transition-transform duration-500 hover:scale-110"
                   />
-                  <div className="absolute top-2 right-2 flex gap-2">
+                  <div
+                    className={`absolute inset-0 z-10 ${style.headerBg} opacity-35`}
+                  ></div>
+                  <div
+                    className={`absolute inset-0 z-10 bg-gradient-to-br ${style.tint} opacity-60`}
+                  ></div>
+                  <div className="absolute top-2 right-2 z-20 flex gap-2">
                     <div className="flex items-center gap-1 rounded-full border border-white/25 bg-[#0a0a0a]/80 px-2 py-1 backdrop-blur-sm">
                       <Star className="h-3 w-3 text-white" />
                       <span className="text-xs text-white">
