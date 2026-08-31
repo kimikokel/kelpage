@@ -32,8 +32,8 @@
     --xai-body-mid: #7d8187;
     --xai-accent-sunset: #ff7a17;
     --xai-accent-dusk: #7c3aed;
-    --xai-font-display: var(--font-display), "Space Grotesk", sans-serif;
-    --xai-font-mono: var(--font-mono), "IBM Plex Mono", monospace;
+    --xai-font-display: var(--font-display), "Space Grotesk", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    --xai-font-mono: var(--font-mono), "IBM Plex Mono", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", monospace;
   }
 
   .dark {

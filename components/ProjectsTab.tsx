@@ -33,7 +33,7 @@ const projects: Project[] = [
     titleKey: "projects.projectDesc.kelxd",
     descriptionKey: "projects.projectDesc.kelxdDesc",
     tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "AWS Cloud Host"],
-    image: "/website.jpeg?height=200&width=400",
+    image: "/kelxd.png?height=200&width=400",
     stars: 120,
     forks: 5,
   },
