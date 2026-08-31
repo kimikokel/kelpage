@@ -52,7 +52,10 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium">
+          <label
+            htmlFor="name"
+            className="font-mono text-xs uppercase tracking-[0.12em] text-[#7d8187]"
+          >
             {t("contact.name")}
           </label>
           <input
@@ -60,11 +63,14 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-[#161b22] border border-[#30363d] rounded-md focus:outline-none focus:ring-2 focus:ring-[#58a6ff] focus:border-transparent"
+            className="w-full rounded-lg border border-[#212327] bg-[#1a1c20] px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-white/60"
           />
         </div>
         <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium">
+          <label
+            htmlFor="email"
+            className="font-mono text-xs uppercase tracking-[0.12em] text-[#7d8187]"
+          >
             {t("contact.email")}
           </label>
           <input
@@ -73,12 +79,15 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-3 py-2 bg-[#161b22] border border-[#30363d] rounded-md focus:outline-none focus:ring-2 focus:ring-[#58a6ff] focus:border-transparent"
+            className="w-full rounded-lg border border-[#212327] bg-[#1a1c20] px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-white/60"
           />
         </div>
       </div>
       <div className="space-y-2">
-        <label htmlFor="subject" className="text-sm font-medium">
+        <label
+          htmlFor="subject"
+          className="font-mono text-xs uppercase tracking-[0.12em] text-[#7d8187]"
+        >
           {t("contact.subject")}
         </label>
         <input
@@ -86,11 +95,14 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className="w-full px-3 py-2 bg-[#161b22] border border-[#30363d] rounded-md focus:outline-none focus:ring-2 focus:ring-[#58a6ff] focus:border-transparent"
+          className="w-full rounded-lg border border-[#212327] bg-[#1a1c20] px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-white/60"
         />
       </div>
       <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium">
+        <label
+          htmlFor="message"
+          className="font-mono text-xs uppercase tracking-[0.12em] text-[#7d8187]"
+        >
           {t("contact.message")}
         </label>
         <textarea
@@ -99,18 +111,15 @@ export default function ContactForm({ triggerShake }: ContactFormProps) {
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-3 py-2 bg-[#161b22] border border-[#30363d] rounded-md focus:outline-none focus:ring-2 focus:ring-[#58a6ff] focus:border-transparent"
+          className="w-full rounded-lg border border-[#212327] bg-[#1a1c20] px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-white/60"
         />
       </div>
 
       {error && (
-        <div className="text-red-500 text-sm font-medium -mt-2">{error}</div>
+        <div className="-mt-2 text-sm font-medium text-[#ffc285]">{error}</div>
       )}
 
-      <Button
-        type="submit"
-        className="w-full bg-[#238636] hover:bg-[#2ea043] text-white"
-      >
+      <Button type="submit" variant="outline" className="w-full text-white">
         {t("contact.send")}
       </Button>
     </form>

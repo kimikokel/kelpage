@@ -37,10 +37,10 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-[#c9d1d9]">
+    <div className="min-h-screen bg-[#0a0a0a] text-[#dadbdf]">
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />
 
-      <main className="container px-4 py-8">
+      <main className="container px-4 py-8 md:py-10">
         {/* Profile section */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
           <ProfileSidebar triggerShake={triggerShake} />
@@ -52,12 +52,12 @@ export default function Portfolio() {
               onValueChange={setActiveTab}
               value={activeTab}
             >
-              <TabsList className="grid w-full grid-cols-5 bg-[#161b22] border-b border-[#30363d] rounded-none h-auto">
+              <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-2xl border border-[#212327] bg-[#0a0a0a] p-1 md:grid-cols-5">
                 <TabsTrigger
                   value="overview"
                   className={cn(
-                    "data-[state=active]:border-[#f78166] data-[state=active]:border-b-2 rounded-none py-2 px-4",
-                    "data-[state=active]:bg-transparent data-[state=active]:shadow-none"
+                    "justify-center gap-2 rounded-full px-3 py-2 text-[11px] tracking-[0.14em] uppercase text-[#7d8187]",
+                    "data-[state=active]:border-white/25 data-[state=active]:bg-white/[0.04] data-[state=active]:text-white"
                   )}
                 >
                   <Star className="mr-2 h-4 w-4" />
@@ -66,8 +66,8 @@ export default function Portfolio() {
                 <TabsTrigger
                   value="skills"
                   className={cn(
-                    "data-[state=active]:border-[#f78166] data-[state=active]:border-b-2 rounded-none py-2 px-4",
-                    "data-[state=active]:bg-transparent data-[state=active]:shadow-none"
+                    "justify-center gap-2 rounded-full px-3 py-2 text-[11px] tracking-[0.14em] uppercase text-[#7d8187]",
+                    "data-[state=active]:border-white/25 data-[state=active]:bg-white/[0.04] data-[state=active]:text-white"
                   )}
                 >
                   <Code className="mr-2 h-4 w-4" />
@@ -76,8 +76,8 @@ export default function Portfolio() {
                 <TabsTrigger
                   value="projects"
                   className={cn(
-                    "data-[state=active]:border-[#f78166] data-[state=active]:border-b-2 rounded-none py-2 px-4",
-                    "data-[state=active]:bg-transparent data-[state=active]:shadow-none"
+                    "justify-center gap-2 rounded-full px-3 py-2 text-[11px] tracking-[0.14em] uppercase text-[#7d8187]",
+                    "data-[state=active]:border-white/25 data-[state=active]:bg-white/[0.04] data-[state=active]:text-white"
                   )}
                 >
                   <Briefcase className="mr-2 h-4 w-4" />
@@ -86,8 +86,8 @@ export default function Portfolio() {
                 <TabsTrigger
                   value="funfacts"
                   className={cn(
-                    "data-[state=active]:border-[#f78166] data-[state=active]:border-b-2 rounded-none py-2 px-4",
-                    "data-[state=active]:bg-transparent data-[state=active]:shadow-none"
+                    "justify-center gap-2 rounded-full px-3 py-2 text-[11px] tracking-[0.14em] uppercase text-[#7d8187]",
+                    "data-[state=active]:border-white/25 data-[state=active]:bg-white/[0.04] data-[state=active]:text-white"
                   )}
                 >
                   <Coffee className="mr-2 h-4 w-4" />
@@ -96,8 +96,8 @@ export default function Portfolio() {
                 <TabsTrigger
                   value="contact"
                   className={cn(
-                    "data-[state=active]:border-[#f78166] data-[state=active]:border-b-2 rounded-none py-2 px-4",
-                    "data-[state=active]:bg-transparent data-[state=active]:shadow-none"
+                    "justify-center gap-2 rounded-full px-3 py-2 text-[11px] tracking-[0.14em] uppercase text-[#7d8187]",
+                    "data-[state=active]:border-white/25 data-[state=active]:bg-white/[0.04] data-[state=active]:text-white"
                   )}
                 >
                   <Mail className="mr-2 h-4 w-4" />

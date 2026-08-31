@@ -25,52 +25,52 @@ const DUOLINGO_STREAK_START = "2024-11-20";
 // Define color schemes for different fun facts
 const factStyles = {
   gaming: {
-    bg: "bg-gradient-to-r from-purple-500/10 to-indigo-500/10",
-    border: "border-purple-500/30",
-    iconBg: "bg-purple-500/20",
-    iconColor: "text-purple-400",
-    titleColor: "text-purple-300",
-    hover: "hover:bg-purple-500/15 hover:border-purple-400/50",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-[#7c3aed]/15",
+    iconColor: "text-[#c4b5fd]",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
   },
   music: {
-    bg: "bg-gradient-to-r from-pink-500/10 to-rose-500/10",
-    border: "border-pink-500/30",
-    iconBg: "bg-pink-500/20",
-    iconColor: "text-pink-400",
-    titleColor: "text-pink-300",
-    hover: "hover:bg-pink-500/15 hover:border-pink-400/50",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-[#ff7a17]/15",
+    iconColor: "text-[#ffc285]",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
   },
   travel: {
-    bg: "bg-gradient-to-r from-emerald-500/10 to-teal-500/10",
-    border: "border-emerald-500/30",
-    iconBg: "bg-emerald-500/20",
-    iconColor: "text-emerald-400",
-    titleColor: "text-emerald-300",
-    hover: "hover:bg-emerald-500/15 hover:border-emerald-400/50",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-white/10",
+    iconColor: "text-[#dadbdf]",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
   },
   personality: {
-    bg: "bg-gradient-to-r from-amber-500/10 to-orange-500/10",
-    border: "border-amber-500/30",
-    iconBg: "bg-amber-500/20",
-    iconColor: "text-amber-400",
-    titleColor: "text-amber-300",
-    hover: "hover:bg-amber-500/15 hover:border-amber-400/50",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-white/10",
+    iconColor: "text-[#dadbdf]",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
   },
   tinkering: {
-    bg: "bg-gradient-to-r from-blue-500/10 to-cyan-500/10",
-    border: "border-blue-500/30",
-    iconBg: "bg-blue-500/20",
-    iconColor: "text-blue-400",
-    titleColor: "text-blue-300",
-    hover: "hover:bg-blue-500/15 hover:border-blue-400/50",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-white/10",
+    iconColor: "text-[#dadbdf]",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
   },
   language: {
-    bg: "bg-gradient-to-r from-red-500/10 to-pink-500/10",
-    border: "border-red-500/30",
-    iconBg: "bg-red-500/20",
-    iconColor: "text-red-400",
-    titleColor: "text-red-300",
-    hover: "hover:bg-red-500/15 hover:border-red-400/50",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-white/10",
+    iconColor: "text-[#dadbdf]",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
   },
 };
 
@@ -139,7 +139,7 @@ function PixelBoard() {
 
   return (
     <div className="space-y-4 md:space-y-6">
-      <div className="flex flex-col sm:flex-row gap-3 p-3 md:p-4 bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20 rounded-lg">
+      <div className="flex flex-col gap-3 rounded-lg border border-[#212327] bg-[#1a1c20] p-3 sm:flex-row md:p-4">
         <div className="flex flex-wrap gap-1 md:gap-2 flex-1 justify-center sm:justify-start">
           {colors.map((color) => (
             <motion.div
@@ -161,21 +161,21 @@ function PixelBoard() {
         <Button
           variant="outline"
           size="sm"
-          className="border-violet-500/30 hover:bg-violet-500/20 text-violet-300 hover:text-violet-200 text-xs md:text-sm"
+          className="text-xs text-white md:text-sm"
           onClick={clearBoard}
         >
           Clear Board
         </Button>
       </div>
 
-      <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 p-2 md:p-6 rounded-lg border border-gray-700/30">
-        <div className="grid grid-cols-10 gap-0.5 md:gap-1 max-w-xs md:max-w-md mx-auto p-2 md:p-4 bg-black/20 rounded-lg border border-gray-600/20">
+      <div className="rounded-lg border border-[#212327] bg-[#0a0a0a] p-2 md:p-6">
+        <div className="mx-auto grid max-w-xs grid-cols-10 gap-0.5 rounded-lg border border-[#212327] bg-black/20 p-2 md:max-w-md md:gap-1 md:p-4">
           {pixels.map((pixel, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="w-5 h-5 md:w-8 md:h-8 rounded-sm cursor-pointer border border-gray-600/40 transition-all duration-150"
+              className="h-5 w-5 cursor-pointer rounded-sm border border-[#212327] transition-all duration-150 md:h-8 md:w-8"
               style={{
                 backgroundColor: pixel || "#0d1117",
                 boxShadow: pixel ? `0 0 4px ${pixel}60` : "none",
@@ -186,7 +186,7 @@ function PixelBoard() {
         </div>
       </div>
 
-      <p className="text-center text-xs md:text-sm text-violet-200/60 italic px-2">
+      <p className="px-2 text-center text-xs italic text-[#7d8187] md:text-sm">
         🎨 Select a color above and click on the grid to create your
         masterpiece!
       </p>
@@ -228,15 +228,16 @@ export default function FunFactsTab() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="bg-[#161b22] border-[#30363d] overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border-b border-indigo-500/20">
+      <Card className="xai-card overflow-hidden">
+        <CardHeader className="border-b border-[#212327]">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-indigo-500/20 rounded-lg">
-              <div className="w-5 h-5 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full"></div>
+            <div className="rounded-full border border-white/20 p-2">
+              <div className="h-4 w-4 rounded-full bg-white"></div>
             </div>
-            <CardTitle className="text-xl text-indigo-300">
-              {t("funFacts.title")}
-            </CardTitle>
+            <div>
+              <p className="xai-eyebrow">Personality</p>
+              <CardTitle className="text-xl text-white">{t("funFacts.title")}</CardTitle>
+            </div>
           </div>
         </CardHeader>
         <CardContent style={{ marginTop: "1rem", marginBottom: "1rem" }}>
@@ -244,10 +245,10 @@ export default function FunFactsTab() {
             {funFacts.map((fact, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.03, x: 8 }}
+                whileHover={{ x: 4 }}
                 transition={{ duration: 0.2 }}
                 style={{
-                  marginTop: "1.3rem",
+                  marginTop: "1rem",
                 }}
                 className={`flex gap-4 p-6 border rounded-lg ${fact.style.bg} ${fact.style.border} ${fact.style.hover} transition-all duration-200 items-center`}
               >
@@ -258,11 +259,11 @@ export default function FunFactsTab() {
                 </div>
                 <div className="flex-1">
                   <h3
-                    className={`font-semibold text-lg ${fact.style.titleColor} mb-2`}
+                    className={`mb-2 text-lg font-normal ${fact.style.titleColor}`}
                   >
                     {t(fact.titleKey)}
                   </h3>
-                  <p className="text-[#c9d1d9] leading-relaxed">
+                  <p className="leading-relaxed text-[#dadbdf]">
                     {t(
                       fact.descriptionKey,
                       fact.descriptionKey === "funFacts.fact6"
@@ -277,23 +278,22 @@ export default function FunFactsTab() {
         </CardContent>
       </Card>
 
-      <Card className="bg-[#161b22] border-[#30363d] mt-6 overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 border-b border-violet-500/20">
+      <Card className="xai-card mt-6 overflow-hidden">
+        <CardHeader className="border-b border-[#212327]">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-violet-500/20 rounded-lg">
-              <div className="w-5 h-5 bg-gradient-to-br from-violet-400 to-purple-400 rounded-sm"></div>
+            <div className="rounded-full border border-white/20 p-2">
+              <div className="h-4 w-4 rounded-sm bg-[#ff7a17]"></div>
             </div>
             <div>
-              <CardTitle className="text-xl text-violet-300">
-                {t("board.title")}
-              </CardTitle>
-              <CardDescription className="text-violet-200/70">
+              <p className="xai-eyebrow">Interactive</p>
+              <CardTitle className="text-xl text-white">{t("board.title")}</CardTitle>
+              <CardDescription className="text-[#7d8187]">
                 {t("board.description")}
               </CardDescription>
             </div>
           </div>
         </CardHeader>
-        <CardContent className="bg-gradient-to-br from-violet-500/5 to-purple-500/5 p-6">
+        <CardContent className="bg-[#191919] p-6">
           <PixelBoard />
         </CardContent>
       </Card>

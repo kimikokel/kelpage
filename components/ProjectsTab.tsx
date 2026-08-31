@@ -223,46 +223,52 @@ export default function ProjectsTab() {
   const getProjectStyle = (index: number) => {
     const styles = [
       {
-        bg: "bg-gradient-to-br from-emerald-500/5 to-green-500/5",
-        border: "border-emerald-500/20",
-        headerBg: "bg-gradient-to-r from-emerald-500/10 to-green-500/10",
-        titleColor: "text-emerald-300",
-        hover: "hover:border-emerald-400/40",
+        bg: "bg-[#191919]",
+        border: "border-[#212327]",
+        headerBg: "bg-[#1a1c20]",
+        titleColor: "text-white",
+        hover: "hover:border-white/20",
+        tint: "from-[#ff7a17]/25 to-transparent",
       },
       {
-        bg: "bg-gradient-to-br from-blue-500/5 to-indigo-500/5",
-        border: "border-blue-500/20",
-        headerBg: "bg-gradient-to-r from-blue-500/10 to-indigo-500/10",
-        titleColor: "text-blue-300",
-        hover: "hover:border-blue-400/40",
+        bg: "bg-[#191919]",
+        border: "border-[#212327]",
+        headerBg: "bg-[#1a1c20]",
+        titleColor: "text-white",
+        hover: "hover:border-white/20",
+        tint: "from-[#7c3aed]/30 to-transparent",
       },
       {
-        bg: "bg-gradient-to-br from-purple-500/5 to-violet-500/5",
-        border: "border-purple-500/20",
-        headerBg: "bg-gradient-to-r from-purple-500/10 to-violet-500/10",
-        titleColor: "text-purple-300",
-        hover: "hover:border-purple-400/40",
+        bg: "bg-[#191919]",
+        border: "border-[#212327]",
+        headerBg: "bg-[#1a1c20]",
+        titleColor: "text-white",
+        hover: "hover:border-white/20",
+        tint: "from-[#a0c3ec]/20 to-transparent",
       },
       {
-        bg: "bg-gradient-to-br from-orange-500/5 to-red-500/5",
-        border: "border-orange-500/20",
-        headerBg: "bg-gradient-to-r from-orange-500/10 to-red-500/10",
-        titleColor: "text-orange-300",
-        hover: "hover:border-orange-400/40",
+        bg: "bg-[#191919]",
+        border: "border-[#212327]",
+        headerBg: "bg-[#1a1c20]",
+        titleColor: "text-white",
+        hover: "hover:border-white/20",
+        tint: "from-[#ffc285]/20 to-transparent",
       },
       {
-        bg: "bg-gradient-to-br from-cyan-500/5 to-teal-500/5",
-        border: "border-cyan-500/20",
-        headerBg: "bg-gradient-to-r from-cyan-500/10 to-teal-500/10",
-        titleColor: "text-cyan-300",
-        hover: "hover:border-cyan-400/40",
+        bg: "bg-[#191919]",
+        border: "border-[#212327]",
+        headerBg: "bg-[#1a1c20]",
+        titleColor: "text-white",
+        hover: "hover:border-white/20",
+        tint: "from-[#c4b5fd]/20 to-transparent",
       },
       {
-        bg: "bg-gradient-to-br from-pink-500/5 to-rose-500/5",
-        border: "border-pink-500/20",
-        headerBg: "bg-gradient-to-r from-pink-500/10 to-rose-500/10",
-        titleColor: "text-pink-300",
-        hover: "hover:border-pink-400/40",
+        bg: "bg-[#191919]",
+        border: "border-[#212327]",
+        headerBg: "bg-[#1a1c20]",
+        titleColor: "text-white",
+        hover: "hover:border-white/20",
+        tint: "from-[#ff7a17]/20 to-transparent",
       },
     ];
     return styles[index % styles.length];
@@ -288,11 +294,14 @@ export default function ProjectsTab() {
               }}
             >
               <Card
-                className={`${style.bg} ${style.border} ${style.hover} overflow-hidden h-full transition-all duration-300`}
+                className={`${style.bg} ${style.border} ${style.hover} h-full overflow-hidden transition-colors duration-300`}
               >
                 <div className="relative h-48 overflow-hidden">
                   <div
-                    className={`absolute inset-0 ${style.headerBg} opacity-20`}
+                    className={`absolute inset-0 ${style.headerBg}`}
+                  ></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${style.tint}`}
                   ></div>
                   <img
                     src={project.image || "/placeholder.svg"}
@@ -304,14 +313,14 @@ export default function ProjectsTab() {
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                   <div className="absolute top-2 right-2 flex gap-2">
-                    <div className="bg-black/60 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
-                      <Star className="h-3 w-3 text-yellow-400" />
+                    <div className="flex items-center gap-1 rounded-full border border-white/25 bg-[#0a0a0a]/80 px-2 py-1 backdrop-blur-sm">
+                      <Star className="h-3 w-3 text-white" />
                       <span className="text-xs text-white">
                         {project.stars}
                       </span>
                     </div>
-                    <div className="bg-black/60 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
-                      <GitFork className="h-3 w-3 text-gray-400" />
+                    <div className="flex items-center gap-1 rounded-full border border-white/25 bg-[#0a0a0a]/80 px-2 py-1 backdrop-blur-sm">
+                      <GitFork className="h-3 w-3 text-white" />
                       <span className="text-xs text-white">
                         {project.forks}
                       </span>
@@ -321,10 +330,11 @@ export default function ProjectsTab() {
                 <CardHeader
                   className={`${style.headerBg} border-b ${style.border}`}
                 >
+                  <p className="xai-eyebrow text-[#7d8187]">Project</p>
                   <CardTitle className={`text-xl ${style.titleColor}`}>
                     {project.titleKey ? t(project.titleKey) : project.title}
                   </CardTitle>
-                  <CardDescription className="text-[#c9d1d9]/80">
+                  <CardDescription className="text-[#7d8187]">
                     {project.descriptionKey
                       ? t(project.descriptionKey)
                       : project.description}
@@ -336,7 +346,7 @@ export default function ProjectsTab() {
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="bg-black/20 text-[#c9d1d9] border-white/10"
+                        className="border-[#212327] bg-transparent text-[#dadbdf]"
                       >
                         {tech}
                       </Badge>
@@ -345,7 +355,7 @@ export default function ProjectsTab() {
                 </CardContent>
                 <CardFooter className={`border-t ${style.border} p-4`}>
                   <div className="flex justify-between items-center w-full">
-                    <div className="flex items-center gap-4 text-sm text-[#8b949e]">
+                    <div className="flex items-center gap-4 text-sm text-[#7d8187]">
                       <div className="flex items-center gap-1">
                         <Star className="h-4 w-4" />
                         <span>{project.stars}</span>
@@ -359,10 +369,11 @@ export default function ProjectsTab() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className={`${style.border} hover:bg-white/10 ${style.titleColor} transition-all duration-200`}
-                        onClick={() =>
-                          window.open(project.links, "_blank")?.focus
-                        }
+                        className="border-white/25 text-white hover:bg-white/10"
+                        onClick={() => {
+                          const nextTab = window.open(project.links, "_blank");
+                          nextTab?.focus();
+                        }}
                       >
                         {project.buttonTextKey
                           ? t(project.buttonTextKey)

@@ -22,44 +22,40 @@ interface ContactTabProps {
 // Define color schemes for different contact methods
 const contactStyles = {
   email: {
-    bg: "bg-gradient-to-r from-blue-500/10 to-indigo-500/10",
-    border: "border-blue-500/30",
-    iconBg: "bg-blue-500/20",
-    iconColor: "text-blue-400",
-    titleColor: "text-blue-300",
-    hover: "hover:bg-blue-500/15 hover:border-blue-400/50",
-    buttonHover:
-      "hover:bg-blue-500/20 border-blue-500/40 text-blue-300 hover:text-blue-200",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-white/10",
+    iconColor: "text-white",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
+    buttonHover: "border-white/25 text-white hover:bg-white/10",
   },
   github: {
-    bg: "bg-gradient-to-r from-gray-500/10 to-slate-500/10",
-    border: "border-gray-500/30",
-    iconBg: "bg-gray-500/20",
-    iconColor: "text-gray-400",
-    titleColor: "text-gray-300",
-    hover: "hover:bg-gray-500/15 hover:border-gray-400/50",
-    buttonHover:
-      "hover:bg-gray-500/20 border-gray-500/40 text-gray-300 hover:text-gray-200",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-white/10",
+    iconColor: "text-white",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
+    buttonHover: "border-white/25 text-white hover:bg-white/10",
   },
   linkedin: {
-    bg: "bg-gradient-to-r from-cyan-500/10 to-blue-500/10",
-    border: "border-cyan-500/30",
-    iconBg: "bg-cyan-500/20",
-    iconColor: "text-cyan-400",
-    titleColor: "text-cyan-300",
-    hover: "hover:bg-cyan-500/15 hover:border-cyan-400/50",
-    buttonHover:
-      "hover:bg-cyan-500/20 border-cyan-500/40 text-cyan-300 hover:text-cyan-200",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-white/10",
+    iconColor: "text-white",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
+    buttonHover: "border-white/25 text-white hover:bg-white/10",
   },
   instagram: {
-    bg: "bg-gradient-to-r from-pink-500/10 to-purple-500/10",
-    border: "border-pink-500/30",
-    iconBg: "bg-pink-500/20",
-    iconColor: "text-pink-400",
-    titleColor: "text-pink-300",
-    hover: "hover:bg-pink-500/15 hover:border-pink-400/50",
-    buttonHover:
-      "hover:bg-pink-500/20 border-pink-500/40 text-pink-300 hover:text-pink-200",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    iconBg: "bg-white/10",
+    iconColor: "text-white",
+    titleColor: "text-white",
+    hover: "hover:border-white/25",
+    buttonHover: "border-white/25 text-white hover:bg-white/10",
   },
 };
 
@@ -113,17 +109,18 @@ export default function ContactTab({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="bg-[#161b22] border-[#30363d] overflow-hidden">
-        <CardHeader className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border-b border-emerald-500/20">
+      <Card className="xai-card overflow-hidden">
+        <CardHeader className="border-b border-[#212327]">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-emerald-500/20 rounded-lg">
-              <Mail className="w-5 h-5 text-emerald-400" />
+            <div className="rounded-full border border-white/20 p-2">
+              <Mail className="h-5 w-5 text-white" />
             </div>
             <div>
-              <CardTitle className="text-xl text-emerald-300">
+              <p className="xai-eyebrow">Connect</p>
+              <CardTitle className="text-xl text-white">
                 {t("contact.title")}
               </CardTitle>
-              <CardDescription className="text-emerald-200/70">
+              <CardDescription className="text-[#7d8187]">
                 {t("contact.description")}
               </CardDescription>
             </div>
@@ -135,7 +132,7 @@ export default function ContactTab({
               {contactMethods.map((contact, index) => (
                 <motion.div
                   key={index}
-                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
                   className={`flex flex-col p-6 border rounded-lg ${contact.style.bg} ${contact.style.border} ${contact.style.hover} transition-all duration-200`}
                 >
@@ -151,7 +148,7 @@ export default function ContactTab({
                       {contact.platform}
                     </h3>
                   </div>
-                  <p className="text-[#c9d1d9] mb-4 flex-1">{contact.handle}</p>
+                  <p className="mb-4 flex-1 text-[#dadbdf]">{contact.handle}</p>
                   {contact.link ? (
                     <Link
                       href={contact.link}
@@ -161,7 +158,7 @@ export default function ContactTab({
                       <Button
                         variant="outline"
                         size="sm"
-                        className={`w-full ${contact.style.buttonHover} transition-all duration-200`}
+                        className={`w-full transition-all duration-200 ${contact.style.buttonHover}`}
                       >
                         {contact.action}
                       </Button>
@@ -170,7 +167,7 @@ export default function ContactTab({
                     <Button
                       variant="outline"
                       size="sm"
-                      className={`w-full ${contact.style.buttonHover} transition-all duration-200`}
+                      className={`w-full transition-all duration-200 ${contact.style.buttonHover}`}
                       onClick={copyEmail}
                     >
                       {contact.action}
@@ -180,15 +177,18 @@ export default function ContactTab({
               ))}
             </div>
 
-            <Card className="bg-gradient-to-br from-violet-500/5 to-purple-500/5 border-violet-500/20">
-              <CardHeader className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 border-b border-violet-500/20">
+            <Card className="xai-card-soft">
+              <CardHeader className="border-b border-[#212327]">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-violet-500/20 rounded-lg">
-                    <Mail className="w-5 h-5 text-violet-400" />
+                  <div className="rounded-full border border-white/20 p-2">
+                    <Mail className="w-5 h-5 text-white" />
                   </div>
-                  <CardTitle className="text-lg text-violet-300">
+                  <div>
+                    <p className="xai-eyebrow">Message</p>
+                    <CardTitle className="text-lg text-white">
                     Send a Message
-                  </CardTitle>
+                    </CardTitle>
+                  </div>
                 </div>
               </CardHeader>
               <CardContent className="p-6">

@@ -13,7 +13,6 @@ import {
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -22,75 +21,75 @@ import { useTranslation } from "../hooks/useTranslation";
 // Define color schemes for different categories
 const categoryStyles = {
   programming: {
-    bg: "bg-gradient-to-r from-blue-500/10 to-indigo-500/10",
-    border: "border-blue-500/30",
-    text: "text-blue-400",
-    skillBg: "bg-blue-500/20",
-    skillBorder: "border-blue-500/40",
-    skillHover: "hover:bg-blue-500/30 hover:border-blue-400/60",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    text: "text-white",
+    skillBg: "bg-transparent",
+    skillBorder: "border-white/20",
+    skillHover: "hover:border-white/40 hover:bg-white/[0.05]",
     icon: Code,
   },
   frontend: {
-    bg: "bg-gradient-to-r from-emerald-500/10 to-green-500/10",
-    border: "border-emerald-500/30",
-    text: "text-emerald-400",
-    skillBg: "bg-emerald-500/20",
-    skillBorder: "border-emerald-500/40",
-    skillHover: "hover:bg-emerald-500/30 hover:border-emerald-400/60",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    text: "text-[#dadbdf]",
+    skillBg: "bg-transparent",
+    skillBorder: "border-[#212327]",
+    skillHover: "hover:border-white/35 hover:bg-white/[0.04]",
     icon: Palette,
   },
   backend: {
-    bg: "bg-gradient-to-r from-orange-500/10 to-red-500/10",
-    border: "border-orange-500/30",
-    text: "text-orange-400",
-    skillBg: "bg-orange-500/20",
-    skillBorder: "border-orange-500/40",
-    skillHover: "hover:bg-orange-500/30 hover:border-orange-400/60",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    text: "text-[#ffc285]",
+    skillBg: "bg-transparent",
+    skillBorder: "border-[#212327]",
+    skillHover: "hover:border-[#ff7a17]/45 hover:bg-[#ff7a17]/10",
     icon: Database,
   },
   devtools: {
-    bg: "bg-gradient-to-r from-purple-500/10 to-violet-500/10",
-    border: "border-purple-500/30",
-    text: "text-purple-400",
-    skillBg: "bg-purple-500/20",
-    skillBorder: "border-purple-500/40",
-    skillHover: "hover:bg-purple-500/30 hover:border-purple-400/60",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    text: "text-[#c4b5fd]",
+    skillBg: "bg-transparent",
+    skillBorder: "border-[#212327]",
+    skillHover: "hover:border-[#7c3aed]/50 hover:bg-[#7c3aed]/10",
     icon: Wrench,
   },
   design: {
-    bg: "bg-gradient-to-r from-pink-500/10 to-rose-500/10",
-    border: "border-pink-500/30",
-    text: "text-pink-400",
-    skillBg: "bg-pink-500/20",
-    skillBorder: "border-pink-500/40",
-    skillHover: "hover:bg-pink-500/30 hover:border-pink-400/60",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    text: "text-[#dadbdf]",
+    skillBg: "bg-transparent",
+    skillBorder: "border-[#212327]",
+    skillHover: "hover:border-white/35 hover:bg-white/[0.04]",
     icon: Palette,
   },
   game: {
-    bg: "bg-gradient-to-r from-cyan-500/10 to-teal-500/10",
-    border: "border-cyan-500/30",
-    text: "text-cyan-400",
-    skillBg: "bg-cyan-500/20",
-    skillBorder: "border-cyan-500/40",
-    skillHover: "hover:bg-cyan-500/30 hover:border-cyan-400/60",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    text: "text-[#a0c3ec]",
+    skillBg: "bg-transparent",
+    skillBorder: "border-[#212327]",
+    skillHover: "hover:border-[#a0c3ec]/45 hover:bg-[#a0c3ec]/10",
     icon: Gamepad2,
   },
   media: {
-    bg: "bg-gradient-to-r from-yellow-500/10 to-amber-500/10",
-    border: "border-yellow-500/30",
-    text: "text-yellow-400",
-    skillBg: "bg-yellow-500/20",
-    skillBorder: "border-yellow-500/40",
-    skillHover: "hover:bg-yellow-500/30 hover:border-yellow-400/60",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    text: "text-[#dadbdf]",
+    skillBg: "bg-transparent",
+    skillBorder: "border-[#212327]",
+    skillHover: "hover:border-white/35 hover:bg-white/[0.04]",
     icon: Camera,
   },
   audio: {
-    bg: "bg-gradient-to-r from-indigo-500/10 to-blue-500/10",
-    border: "border-indigo-500/30",
-    text: "text-indigo-400",
-    skillBg: "bg-indigo-500/20",
-    skillBorder: "border-indigo-500/40",
-    skillHover: "hover:bg-indigo-500/30 hover:border-indigo-400/60",
+    bg: "bg-[#1a1c20]",
+    border: "border-[#212327]",
+    text: "text-[#dadbdf]",
+    skillBg: "bg-transparent",
+    skillBorder: "border-[#212327]",
+    skillHover: "hover:border-white/35 hover:bg-white/[0.04]",
     icon: Music,
   },
 };
@@ -109,8 +108,9 @@ export default function SkillsTab() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="bg-[#161b22] border-[#30363d]">
-        <CardHeader>
+      <Card className="xai-card overflow-hidden">
+        <CardHeader className="border-b border-[#212327]">
+          <p className="xai-eyebrow">Engineering Stack</p>
           <CardTitle className="text-xl text-white">
             {t("skills.titleTech")}
           </CardTitle>
@@ -127,7 +127,7 @@ export default function SkillsTab() {
                   className={`h-5 w-5 ${categoryStyles.programming.text}`}
                 />
                 <h3
-                  className={`text-lg font-medium ${categoryStyles.programming.text}`}
+                  className={`text-lg font-normal ${categoryStyles.programming.text}`}
                 >
                   {t("skills.language")}
                 </h3>
@@ -164,7 +164,7 @@ export default function SkillsTab() {
                   className={`h-5 w-5 ${categoryStyles.frontend.text}`}
                 />
                 <h3
-                  className={`text-lg font-medium ${categoryStyles.frontend.text}`}
+                  className={`text-lg font-normal ${categoryStyles.frontend.text}`}
                 >
                   {t("skills.frontend")}
                 </h3>
@@ -204,7 +204,7 @@ export default function SkillsTab() {
                   className={`h-5 w-5 ${categoryStyles.backend.text}`}
                 />
                 <h3
-                  className={`text-lg font-medium ${categoryStyles.backend.text}`}
+                  className={`text-lg font-normal ${categoryStyles.backend.text}`}
                 >
                   {t("skills.backend")}
                 </h3>
@@ -234,7 +234,7 @@ export default function SkillsTab() {
                   className={`h-5 w-5 ${categoryStyles.devtools.text}`}
                 />
                 <h3
-                  className={`text-lg font-medium ${categoryStyles.devtools.text}`}
+                  className={`text-lg font-normal ${categoryStyles.devtools.text}`}
                 >
                   {t("skills.tools")}
                 </h3>
@@ -271,7 +271,7 @@ export default function SkillsTab() {
                   className={`h-5 w-5 ${categoryStyles.design.text}`}
                 />
                 <h3
-                  className={`text-lg font-medium ${categoryStyles.design.text}`}
+                  className={`text-lg font-normal ${categoryStyles.design.text}`}
                 >
                   {t("skills.others")}
                 </h3>
@@ -296,7 +296,8 @@ export default function SkillsTab() {
           </div>
         </CardContent>
 
-        <CardHeader>
+        <CardHeader className="border-y border-[#212327]">
+          <p className="xai-eyebrow">Creative Stack</p>
           <CardTitle className="text-xl text-white">
             {t("skills.titleMulti")}
           </CardTitle>
@@ -313,7 +314,7 @@ export default function SkillsTab() {
                   className={`h-5 w-5 ${categoryStyles.game.text}`}
                 />
                 <h3
-                  className={`text-lg font-medium ${categoryStyles.game.text}`}
+                  className={`text-lg font-normal ${categoryStyles.game.text}`}
                 >
                   {t("skills.game3D")}
                 </h3>
@@ -341,7 +342,7 @@ export default function SkillsTab() {
                   className={`h-5 w-5 ${categoryStyles.media.text}`}
                 />
                 <h3
-                  className={`text-lg font-medium ${categoryStyles.media.text}`}
+                  className={`text-lg font-normal ${categoryStyles.media.text}`}
                 >
                   {t("skills.video")}
                 </h3>
@@ -376,7 +377,7 @@ export default function SkillsTab() {
                   className={`h-5 w-5 ${categoryStyles.audio.text}`}
                 />
                 <h3
-                  className={`text-lg font-medium ${categoryStyles.audio.text}`}
+                  className={`text-lg font-normal ${categoryStyles.audio.text}`}
                 >
                   {t("skills.audio")}
                 </h3>
