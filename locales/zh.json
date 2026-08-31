@@ -8,9 +8,13 @@
   },
   "overview": {
     "title": "關於我",
-    "greeting": "嗨！👋 我是 Kel / Kelly，一位專精於端到端數位解決方案的<span class='text-indigo-300'>全端開發者</span>。💻✨",
+    "greeting": "嗨！👋 我是 Kel / Kelly，一位專精於端到端數位解決方案的<span class='text-indigo-300'>全端開發者</span>，同時也是<span class='text-emerald-300'>k-tech（啟希科技）創辦人兼 CEO</span>。💻✨",
     "services": "🌐 <span class='text-blue-300'>網站</span>與網路應用程式,|📱 <span class='text-violet-300'>手機應用程式</span> iOS & Android,|💼 <span class='text-green-400'>商業系統</span>與企業解決方案,|🛒 <span class='text-yellow-400'>電子商務</span>與網店平台,|🎮 <span class='text-pink-300'>遊戲</span>與互動體驗,|🎵 <span class='text-purple-400'>音樂製作</span>與混音服務,|🎬 <span class='text-cyan-400'>影片編輯</span>與動畫委託製作",
     "offering": "我提供<span class='text-yellow-400'>客製化開發</span>、<span class='text-cyan-400'>委託工作</span>和<span class='text-red-400'>自由接案項目</span>，將您的想法變為現實。✨ 從概念到部署，我為各種規模的企業處理完整的<span class='text-green-400'>開發生命週期</span>。🚀",
+    "education": {
+      "title": "學歷",
+      "items": "理學碩士（電腦科學）- 香港大學（2026）|電腦科學系交換生 - 南洋理工大學（2023）|學士學位（主修 Computing）- 墨爾本大學（2022-2024）|幼稚園、小學及中學 - 澳門聖公會中學（2006-2021）"
+    },
     "nav": {
         "title": "瀏覽",
         "skillsDesc": "查看我的技術技能與專業知識",

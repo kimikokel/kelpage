@@ -8,9 +8,13 @@
   },
   "overview": {
     "title": "About Me",
-    "greeting": "Hey there! 👋 I'm Kel / Kelly, a <span class='text-indigo-300'>full-stack developer</span> specialising in end-to-end digital solutions. 💻✨",
-    "services": "🌐 <span class='text-blue-300'>Websites</span>& web applications,|📱 <span class='text-violet-300'>Mobile apps</span> for iOS & Android,|💼 <span class='text-green-400'>Business systems</span> & enterprise solutions,|🛒 <span class='text-yellow-400'>E-commerce</span> & webstore platforms,|🎮 <span class='text-pink-300'>Games</span> & interactive experiences,|🎵 <span class='text-purple-400'>Music production</span> & audio mixing services,|🎬 <span class='text-cyan-400'>Video editing</span> & animation video commissions",
+    "greeting": "Hey there! 👋 I'm Kel / Kelly, a <span class='text-indigo-300'>full-stack developer</span> specialising in end-to-end digital solutions and the founder & CEO of <span class='text-emerald-300'>k-tech (啟希科技)</span>. 💻✨",
+    "services": "🌐 <span class='text-blue-300'>Websites</span> & web applications,|📱 <span class='text-violet-300'>Mobile apps</span> for iOS & Android,|💼 <span class='text-green-400'>Business systems</span> & enterprise solutions,|🛒 <span class='text-yellow-400'>E-commerce</span> & webstore platforms,|🎮 <span class='text-pink-300'>Games</span> & interactive experiences,|🎵 <span class='text-purple-400'>Music production</span> & audio mixing services,|🎬 <span class='text-cyan-400'>Video editing</span> & animation video commissions",
     "offering": "I offer <span class='text-yellow-400'>custom development</span>, <span class='text-cyan-400'>commission work</span>, and <span class='text-red-400'>freelance projects</span> to bring your ideas to life. ✨ From concept to deployment, I handle the full <span class='text-green-400'>development lifecycle</span> for businesses of all sizes. 🚀",
+    "education": {
+      "title": "Education",
+      "items": "Master of Science in Computer Science - The University of Hong Kong (2026)|Exchange Program in Computer Science - Nanyang Technological University (2023)|Bachelor's Degree in Computing - The University of Melbourne (2022-2024)|Kindergarten, Primary, and Secondary - Macau Anglican College (2006-2021)"
+    },
     "nav": {
         "title": "Navigations",
         "skillsDesc": "Check out my technical skills and expertise",

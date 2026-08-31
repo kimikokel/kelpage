@@ -68,6 +68,7 @@ export default function OverviewTab({
   setActiveTab,
 }: OverviewTabProps) {
   const { t, isInitialized } = useTranslation();
+  const educationItems = t("overview.education.items").split("|");
 
   // Don't render until translations are initialized
   if (!isInitialized) {
@@ -121,6 +122,16 @@ export default function OverviewTab({
               <p className="mt-4 text-[#c9d1d9] leading-relaxed">
                 {renderHTML(t("overview.offering"))}
               </p>
+              <div className="mt-6 rounded-lg border border-indigo-500/30 bg-gradient-to-r from-indigo-500/10 to-violet-500/10 p-4">
+                <h3 className="text-sm font-semibold tracking-wide uppercase text-indigo-300">
+                  {t("overview.education.title")}
+                </h3>
+                <ul className="mt-3 space-y-2 text-[#c9d1d9] leading-relaxed list-disc pl-5">
+                  {educationItems.map((item, index) => (
+                    <li key={index}>{item.trim()}</li>
+                  ))}
+                </ul>
+              </div>
             </CardContent>
           </Card>
         </motion.div>
